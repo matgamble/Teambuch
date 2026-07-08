@@ -219,7 +219,8 @@ p {
 
 .placeholder,
 .photo-placeholder,
-.portrait-placeholder {
+.portrait-placeholder,
+.image-placeholder {
   border: 3px dashed #c9b98f;
   background:
     linear-gradient(135deg, rgba(216, 228, 209, 0.55), rgba(243, 239, 230, 0.9));
@@ -241,11 +242,13 @@ p {
   border-left: 6px solid #5d765d;
   padding: 16px;
   border-radius: 14px;
+  margin-top: 22px;
 }
 
 .card-grid,
 .checklist-grid,
-.agreement-grid {
+.agreement-grid,
+.moment-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
@@ -253,7 +256,8 @@ p {
 }
 
 .card,
-.check-card {
+.check-card,
+.moment-card {
   background: rgba(248, 241, 223, 0.95);
   border-radius: 20px;
   padding: 18px;
@@ -266,6 +270,15 @@ p {
   border-radius: 18px;
 }
 
+.image-placeholder {
+  min-height: 210px;
+  border-radius: 18px;
+}
+
+.moment-card h3 {
+  margin-top: 14px;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -276,42 +289,6 @@ p {
 .portrait-placeholder {
   aspect-ratio: 3 / 4;
   border-radius: 18px;
-}
-
-.team-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.team-gallery figure {
-  margin: 0;
-  background: rgba(248, 241, 223, 0.95);
-  border-radius: 22px;
-  padding: 12px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(197, 139, 43, 0.18);
-  overflow: visible;
-}
-
-.team-gallery img {
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  aspect-ratio: auto !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  display: block;
-  border-radius: 16px;
-  background: #f3efe6;
-}
-
-.team-gallery figcaption {
-  margin-top: 10px;
-  color: #5d765d;
-  font-weight: 700;
-  text-align: center;
 }
 
 .task {
@@ -385,7 +362,8 @@ p {
   }
 
   .card-grid,
-  .checklist-grid {
+  .checklist-grid,
+  .moment-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -402,7 +380,7 @@ p {
   }
 }
 
-/* Größere Tablets / kleine Laptops */
+/* Größere Tablets */
 @media (min-width: 1024px) {
   .topbar {
     display: flex;
@@ -418,11 +396,9 @@ p {
     max-width: 720px;
   }
 
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .checklist-grid {
+  .card-grid,
+  .checklist-grid,
+  .moment-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
