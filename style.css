@@ -357,3 +357,43 @@ p {
     max-height: none;
   }
 }
+/* KORREKTUR: Teamfotos vollständig anzeigen, nichts abschneiden */
+.team-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  margin-top: 28px;
+}
+
+.team-gallery figure {
+  margin: 0;
+  background: rgba(248, 241, 223, 0.95);
+  border-radius: 24px;
+  padding: 14px;
+  overflow: visible;
+}
+
+.team-gallery img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block;
+  border-radius: 18px;
+  background: #f3efe6;
+}
+
+.team-gallery figcaption {
+  margin-top: 10px;
+  color: #5d765d;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .team-gallery {
+    grid-template-columns: 1fr;
+  }
+}
