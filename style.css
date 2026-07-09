@@ -219,7 +219,6 @@ p {
 
 .placeholder,
 .photo-placeholder,
-.portrait-placeholder,
 .image-placeholder {
   border: 3px dashed #c9b98f;
   background:
@@ -302,7 +301,6 @@ p {
 .special-photo-gallery img {
   width: 100%;
   height: auto;
-  max-height: none;
   object-fit: contain;
   display: block;
   border-radius: 14px;
@@ -353,26 +351,40 @@ p {
 
 .orka-fakt {
   margin-top: 28px;
-  padding: 16px 18px;
+  padding: 20px 18px;
   border-radius: 20px;
   background:
     linear-gradient(135deg, rgba(141, 184, 210, 0.22), rgba(216, 228, 209, 0.55));
   border: 1px solid rgba(18, 38, 74, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.orka-fakt p {
-  margin: 0;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
 }
 
 .orka-symbol {
-  width: 84px;
+  width: 120px;
+  max-width: 100%;
   height: auto;
   display: block;
-  flex: 0 0 auto;
-  opacity: 1;
+  margin: 0 auto;
+}
+
+.orka-text {
+  margin: 0;
+}
+
+.orka-label-text {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+
+.orka-quote {
+  display: block;
+  font-style: italic;
+  line-height: 1.7;
 }
 
 /* Tablet */
@@ -396,13 +408,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .orka-fakt {
-    flex-direction: row;
-    align-items: center;
-  }
-
   .orka-symbol {
-    width: 96px;
+    width: 140px;
   }
 }
 
