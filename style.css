@@ -316,18 +316,6 @@ p {
   font-size: 0.95rem;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.portrait-placeholder {
-  aspect-ratio: 3 / 4;
-  border-radius: 18px;
-}
-
 .task {
   background: #f3efe6;
   border-radius: 18px;
@@ -384,8 +372,7 @@ p {
   height: auto;
   display: block;
   flex: 0 0 auto;
-  mix-blend-mode: multiply;
-  opacity: 0.92;
+  opacity: 1;
 }
 
 /* Tablet */
@@ -407,10 +394,6 @@ p {
 
   .agreement-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .orka-fakt {
