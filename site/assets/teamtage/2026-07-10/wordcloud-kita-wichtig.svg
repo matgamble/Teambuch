@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1036" height="575" viewBox="0 0 1036 575" role="img" aria-labelledby="title desc">
+  <title id="title">Was ist dir für unsere Kita besonders wichtig?</title>
+  <desc id="desc">Wordcloud aus dem Planungstag mit den besonders häufig genannten Begriffen Kommunikation, Motivation, Absprachen und Struktur.</desc>
+  <rect width="1036" height="575" fill="#ffffff"/>
+  <style>
+    .title { font: 400 36px Arial, Helvetica, sans-serif; fill: #101010; }
+    .brand { font: 700 15px Arial, Helvetica, sans-serif; fill: #111111; }
+    .blue { fill: #596be8; }
+    .dark { fill: #25367f; }
+    .red { fill: #c64d50; }
+    .purple { fill: #6d5bd5; }
+    .small { font: 400 14px Arial, Helvetica, sans-serif; }
+    .tiny { font: 400 13px Arial, Helvetica, sans-serif; }
+  </style>
+
+  <text x="37" y="96" class="title">Was ist dir für unsere Kita besonders wichtig?</text>
+  <text x="935" y="21" class="brand">Mentimeter</text>
+
+  <text x="412" y="274" class="dark" style="font:400 50px Arial, Helvetica, sans-serif;">absprachen</text>
+  <text x="307" y="331" class="blue" style="font:400 61px Arial, Helvetica, sans-serif;">kommunikation</text>
+  <text x="366" y="385" class="red" style="font:400 57px Arial, Helvetica, sans-serif;">motivation</text>
+  <text x="666" y="372" class="purple" style="font:400 39px Arial, Helvetica, sans-serif;">struktur</text>
+
+  <text x="330" y="240" class="small blue">aufsichtspflicht</text>
+  <text x="467" y="232" class="tiny red">gleiche regeln für alle b</text>
+  <text x="627" y="238" class="small red">augenhöhe</text>
+  <text x="318" y="260" class="tiny red">roter faden</text>
+  <text x="707" y="265" class="tiny blue">verständnis</text>
+  <text x="326" y="286" class="tiny red">ehrlichkeit</text>
+  <text x="691" y="286" class="tiny red">kontinuität</text>
+  <text x="175" y="313" class="tiny dark">dass alle mitdenken</text>
+  <text x="241" y="347" class="tiny dark">gute unterstützung</text>
+  <text x="229" y="371" class="tiny blue">leichtigkeit und spaß</text>
+  <text x="282" y="391" class="tiny red">teamarbeit</text>
+  <text x="374" y="404" class="tiny purple">klare regel</text>
+  <text x="481" y="411" class="tiny blue">ein miteinander</text>
+  <text x="434" y="423" class="tiny purple">respekt</text>
+  <text x="379" y="441" class="tiny blue">sich miteinander verstehe</text>
+  <text x="653" y="399" class="tiny dark">regeln</text>
+  <text x="708" y="390" class="tiny dark">unvoreingenommenheit</text>
+  <text x="592" y="420" class="tiny red">mitarbeiten</text>
+  <text x="580" y="443" class="tiny red">wertschätzendes miteinander</text>
+</svg>
