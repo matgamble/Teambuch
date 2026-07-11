@@ -2,7 +2,7 @@ name: Hort Galerie einbauen
 on:
   push:
     branches:
-      - content/stammgruppe-hort-galerie
+      - main
     paths:
       - .github/workflows/hort-gallery.yml
 permissions:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: content/stammgruppe-hort-galerie
+          ref: main
       - name: Galerie einfügen
         env:
           OLD_B64: PGFydGljbGUgY2xhc3M9ImNhcmQiPjxkaXYgY2xhc3M9InBob3RvLXBsYWNlaG9sZGVyIj5Gb3RvIFN0YW1tZ3J1cHBlPC9kaXY+PGRpdiBjbGFzcz0ibW90dG8tcGxhY2Vob2xkZXIiPlVuc2VyIE1vdHRvPC9kaXY+PGgzPkhvcnQ8L2gzPjxwPldlciBzaW5kIHdpcj8gV2FzIGlzdCB1bnMgd2ljaHRpZz88L3A+PC9hcnRpY2xlPg==
