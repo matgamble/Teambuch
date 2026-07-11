@@ -1,0 +1,30 @@
+name: Drei Wordclouds ergänzen
+
+on:
+  push:
+    branches:
+      - content/drei-wordclouds-2026-07-10
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: content/drei-wordclouds-2026-07-10
+
+      - name: Wordclouds und Galerie ergänzen
+        run: python .github/scripts/add_wordclouds.py
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/index.html site/assets/teamtage/2026-07-10/
+          git commit -m "Drei weitere Wordclouds ergänzen"
+          git push
