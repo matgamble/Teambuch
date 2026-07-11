@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=site/">
-  <link rel="canonical" href="site/">
   <title>Teambuch – Kita Reischlestraße</title>
-  <script>window.location.replace("site/");</script>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #f7f4ec;
+    }
+
+    #teambuch-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #f7f4ec;
+    }
+  </style>
 </head>
 <body>
-  <p><a href="site/">Teambuch öffnen</a></p>
+  <iframe
+    id="teambuch-frame"
+    src="site/"
+    title="Teambuch der Kita Reischlestraße"
+  ></iframe>
+  <script src="site/hort-gallery-shell.js"></script>
+  <noscript>
+    <p><a href="site/">Teambuch öffnen</a></p>
+  </noscript>
 </body>
 </html>
