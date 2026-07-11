@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1039 578" role="img" aria-labelledby="title desc">
+  <title id="title">Welches Wort beschreibt unser vergangenes Kita-Jahr am besten?</title>
+  <desc id="desc">Wordcloud mit den besonders großen Begriffen Chaos, Zusammenhalt und chaotisch sowie weiteren Rückmeldungen aus dem Team.</desc>
+  <rect width="1039" height="578" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="38" y="93" font-size="34" fill="#111111">Welches Wort beschreibt unser vergangenes Kita-Jahr am besten?</text>
+
+    <text x="420" y="285" font-size="50" fill="#2f3f88">zusammenhalt</text>
+    <text x="420" y="350" font-size="70" fill="#5267e8">chaos</text>
+    <text x="403" y="398" font-size="48" fill="#c84b45">chaotisch</text>
+
+    <text x="493" y="213" font-size="18" fill="#5267e8">das jahr war voller über</text>
+    <text x="335" y="242" font-size="18" fill="#765de0">viel im garten</text>
+    <text x="494" y="247" font-size="18" fill="#c84b45">spannungsreich</text>
+    <text x="257" y="270" font-size="18" fill="#8c3c3a">lehrreich</text>
+    <text x="354" y="271" font-size="18" fill="#5267e8">schön</text>
+    <text x="192" y="310" font-size="18" fill="#c84b45">engagiert</text>
+    <text x="294" y="302" font-size="18" fill="#8c3c3a">kunterbunt</text>
+    <text x="279" y="337" font-size="18" fill="#8c3c3a">füße still halten</text>
+    <text x="340" y="360" font-size="18" fill="#c84b45">humor</text>
+    <text x="191" y="363" font-size="18" fill="#2f3f88">starkes team</text>
+    <text x="325" y="386" font-size="18" fill="#765de0">kreativ</text>
+    <text x="281" y="419" font-size="18" fill="#2f3f88">liebevolles chaos</text>
+    <text x="372" y="448" font-size="18" fill="#8c3c3a">stressig</text>
+
+    <text x="638" y="303" font-size="19" fill="#c84b45">😅</text>
+    <text x="630" y="327" font-size="18" fill="#765de0">geschafft</text>
+    <text x="623" y="359" font-size="18" fill="#5267e8">ereignisreich</text>
+    <text x="641" y="386" font-size="18" fill="#5267e8">lebendig</text>
+    <text x="645" y="419" font-size="18" fill="#8c3c3a">neuanfang</text>
+    <text x="748" y="314" font-size="18" fill="#2f3f88">vertrauen</text>
+    <text x="747" y="349" font-size="18" fill="#c84b45">veränderung</text>
+    <text x="732" y="379" font-size="18" fill="#765de0">stress</text>
+    <text x="464" y="423" font-size="18" fill="#2f3f88">humorvoll</text>
+    <text x="564" y="431" font-size="18" fill="#765de0">lustig</text>
+    <text x="476" y="460" font-size="18" fill="#5267e8">unterstützend</text>
+  </g>
+</svg>
