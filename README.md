@@ -1,21 +1,24 @@
 # Teambuch Kita Reischlestraße
 
-Digitale Arbeitsversion unseres Teambuchs.
+Digitale Arbeitsversion unseres gemeinsam wachsenden Teambuchs.
 
-Dieses Teambuch entsteht Schritt für Schritt gemeinsam mit dem Team.
+## Ordnerstruktur
+
+- `site/` – die aktuell veröffentlichte Website
+- `site/assets/` – geordnete Ablage für neue Bilder und Medien
+  - `team/`
+  - `stammgruppen/`
+  - `lernwerkstaetten/`
+  - `teamtage/JJJJ-MM-TT/`
+- `documents/` – PDFs, Vorlagen, Protokolle, Fortbildungen und Planungstage
+- `archive/` – ältere oder derzeit nicht verwendete Dateien
+
+Die Datei `index.html` im Hauptverzeichnis leitet automatisch auf die Website in `site/` weiter.
 
 ## Aktueller Stand
 
-- Titelseite angelegt
-- Grundgestaltung angelegt
-- Weitere Kapitel folgen
+Das Teambuch enthält bereits die Grundgestaltung, die Kapitelstruktur, Bereiche für Stammgruppen und Lernwerkstätten, Küche und Hauswirtschaft, Fortbildungen, Checklisten sowie erste Bilder und Momente.
 
-## Geplante Inhalte
+## Sicherheit
 
-- Unser Motto / Wordcloud
-- Stammgruppen
-- Lernwerkstätten
-- Teamfotos
-- Reflexionsfragen
-- Arbeitsaufträge aus den Planungstagen
-- Vereinbarungen für den Alltag
+Der Stand vor der Umstrukturierung ist im Branch `backup/2026-07-11-current-state` gesichert.
