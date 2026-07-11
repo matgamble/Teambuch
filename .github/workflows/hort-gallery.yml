@@ -1,0 +1,45 @@
+name: Hort Galerie einbauen
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/hort-gallery.yml
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Galerie einfügen
+        env:
+          OLD_B64: PGFydGljbGUgY2xhc3M9ImNhcmQiPjxkaXYgY2xhc3M9InBob3RvLXBsYWNlaG9sZGVyIj5Gb3RvIFN0YW1tZ3J1cHBlPC9kaXY+PGRpdiBjbGFzcz0ibW90dG8tcGxhY2Vob2xkZXIiPlVuc2VyIE1vdHRvPC9kaXY+PGgzPkhvcnQ8L2gzPjxwPldlciBzaW5kIHdpcj8gV2FzIGlzdCB1bnMgd2ljaHRpZz88L3A+PC9hcnRpY2xlPg==
+          NEW_B64: PGFydGljbGUgY2xhc3M9ImNhcmQiIHN0eWxlPSJncmlkLWNvbHVtbjoxIC8gLTE7Ij48aDM+U3RhbW1ncnVwcGUgSG9ydDwvaDM+PHA+Q2hpYXJhLCBNYXR6ZSwgRnJhbnppIHVuZCBCbGVuZXJhPC9wPjxkaXYgY2xhc3M9InNwZWNpYWwtcGhvdG8tZ2FsbGVyeSIgYXJpYS1sYWJlbD0iU3RhbW1ncnVwcGUgSG9ydCI+PGZpZ3VyZT48YSBjbGFzcz0iZ2FsbGVyeS1saW5rIiBocmVmPSIjaG9ydC1ncnVwcGVuZm90byI+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWdydXBwZW5mb3RvLnN2ZyIgYWx0PSJTdGFtbWdydXBwZSBIb3J0Ij48L2E+PGZpZ2NhcHRpb24+U3RhbW1ncnVwcGUgSG9ydDwvZmlnY2FwdGlvbj48L2ZpZ3VyZT48ZmlndXJlPjxhIGNsYXNzPSJnYWxsZXJ5LWxpbmsiIGhyZWY9IiNob3J0LWNoaWFyYSI+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWNoaWFyYS5zdmciIGFsdD0iQ2hpYXJhIj48L2E+PGZpZ2NhcHRpb24+Q2hpYXJhPC9maWdjYXB0aW9uPjwvZmlndXJlPjxmaWd1cmU+PGEgY2xhc3M9ImdhbGxlcnktbGluayIgaHJlZj0iI2hvcnQtbWF0emUiPjxpbWcgc3JjPSJhc3NldHMvc3RhbW1ncnVwcGVuL2hvcnQvaG9ydC1tYXR6ZS5zdmciIGFsdD0iTWF0emUiPjwvYT48ZmlnY2FwdGlvbj5NYXR6ZTwvZmlnY2FwdGlvbj48L2ZpZ3VyZT48ZmlndXJlPjxhIGNsYXNzPSJnYWxsZXJ5LWxpbmsiIGhyZWY9IiNob3J0LWZyYW56aSI+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWZyYW56aS5zdmciIGFsdD0iRnJhbnppIj48L2E+PGZpZ2NhcHRpb24+RnJhbnppPC9maWdjYXB0aW9uPjwvZmlndXJlPjxmaWd1cmU+PGEgY2xhc3M9ImdhbGxlcnktbGluayIgaHJlZj0iI2hvcnQtYmxlbmVyYSI+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWJsZW5lcmEuc3ZnIiBhbHQ9IkJsZW5lcmEiPjwvYT48ZmlnY2FwdGlvbj5CbGVuZXJhPC9maWdjYXB0aW9uPjwvZmlndXJlPjwvZGl2PjwvYXJ0aWNsZT4=
+          LBS_B64: PGRpdiBpZD0iaG9ydC1ncnVwcGVuZm90byIgY2xhc3M9ImxpZ2h0Ym94Ij48YSBjbGFzcz0ibGlnaHRib3gtY2xvc2UtYXJlYSIgaHJlZj0iI3N0YW1tZ3J1cHBlbiIgYXJpYS1sYWJlbD0iVm9sbGJpbGQgc2NobGllw59lbiI+PC9hPjxkaXYgY2xhc3M9ImxpZ2h0Ym94LWNvbnRlbnQiPjxhIGNsYXNzPSJsaWdodGJveC1jbG9zZSIgaHJlZj0iI3N0YW1tZ3J1cHBlbiIgYXJpYS1sYWJlbD0iVm9sbGJpbGQgc2NobGllw59lbiI+w5c8L2E+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWdydXBwZW5mb3RvLnN2ZyIgYWx0PSJTdGFtbWdydXBwZSBIb3J0Ij48cD5TdGFtbWdydXBwZSBIb3J0PC9wPjwvZGl2PjwvZGl2PjxkaXYgaWQ9ImhvcnQtY2hpYXJhIiBjbGFzcz0ibGlnaHRib3giPjxhIGNsYXNzPSJsaWdodGJveC1jbG9zZS1hcmVhIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj48L2E+PGRpdiBjbGFzcz0ibGlnaHRib3gtY29udGVudCI+PGEgY2xhc3M9ImxpZ2h0Ym94LWNsb3NlIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj7DlzwvYT48aW1nIHNyYz0iYXNzZXRzL3N0YW1tZ3J1cHBlbi9ob3J0L2hvcnQtY2hpYXJhLnN2ZyIgYWx0PSJDaGlhcmEiPjxwPkNoaWFyYTwvcD48L2Rpdj48L2Rpdj48ZGl2IGlkPSJob3J0LW1hdHplIiBjbGFzcz0ibGlnaHRib3giPjxhIGNsYXNzPSJsaWdodGJveC1jbG9zZS1hcmVhIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj48L2E+PGRpdiBjbGFzcz0ibGlnaHRib3gtY29udGVudCI+PGEgY2xhc3M9ImxpZ2h0Ym94LWNsb3NlIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj7DlzwvYT48aW1nIHNyYz0iYXNzZXRzL3N0YW1tZ3J1cHBlbi9ob3J0L2hvcnQtbWF0emUuc3ZnIiBhbHQ9Ik1hdHplIj48cD5NYXR6ZTwvcD48L2Rpdj48L2Rpdj48ZGl2IGlkPSJob3J0LWZyYW56aSIgY2xhc3M9ImxpZ2h0Ym94Ij48YSBjbGFzcz0ibGlnaHRib3gtY2xvc2UtYXJlYSIgaHJlZj0iI3N0YW1tZ3J1cHBlbiIgYXJpYS1sYWJlbD0iVm9sbGJpbGQgc2NobGllw59lbiI+PC9hPjxkaXYgY2xhc3M9ImxpZ2h0Ym94LWNvbnRlbnQiPjxhIGNsYXNzPSJsaWdodGJveC1jbG9zZSIgaHJlZj0iI3N0YW1tZ3J1cHBlbiIgYXJpYS1sYWJlbD0iVm9sbGJpbGQgc2NobGllw59lbiI+w5c8L2E+PGltZyBzcmM9ImFzc2V0cy9zdGFtbWdydXBwZW4vaG9ydC9ob3J0LWZyYW56aS5zdmciIGFsdD0iRnJhbnppIj48cD5GcmFuemk8L3A+PC9kaXY+PC9kaXY+PGRpdiBpZD0iaG9ydC1ibGVuZXJhIiBjbGFzcz0ibGlnaHRib3giPjxhIGNsYXNzPSJsaWdodGJveC1jbG9zZS1hcmVhIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj48L2E+PGRpdiBjbGFzcz0ibGlnaHRib3gtY29udGVudCI+PGEgY2xhc3M9ImxpZ2h0Ym94LWNsb3NlIiBocmVmPSIjc3RhbW1ncnVwcGVuIiBhcmlhLWxhYmVsPSJWb2xsYmlsZCBzY2hsaWXDn2VuIj7DlzwvYT48aW1nIHNyYz0iYXNzZXRzL3N0YW1tZ3J1cHBlbi9ob3J0L2hvcnQtYmxlbmVyYS5zdmciIGFsdD0iQmxlbmVyYSI+PHA+QmxlbmVyYTwvcD48L2Rpdj48L2Rpdj4=
+          MARKER_B64: PGRpdiBjbGFzcz0ibGlnaHRib3giIGlkPSJ3b3JkY2xvdWQtc3RvbHoiPg==
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, os
+          p=Path("site/index.html")
+          s=p.read_text()
+          dec=lambda n: base64.b64decode(os.environ[n]).decode()
+          old,new,lbs,marker=map(dec,["OLD_B64","NEW_B64","LBS_B64","MARKER_B64"])
+          if old not in s:
+              raise SystemExit("Hort-Platzhalter nicht gefunden")
+          s=s.replace(old,new,1)
+          if marker not in s:
+              raise SystemExit("Lightbox-Marker nicht gefunden")
+          s=s.replace(marker,lbs+marker,1)
+          p.write_text(s)
+          PY
+      - name: Speichern
+        run: |
+          git config user.name "ChatGPT"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/index.html
+          git commit -m "Stammgruppe Hort als Galerie einfügen"
+          git push
