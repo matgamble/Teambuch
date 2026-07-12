@@ -18,50 +18,58 @@
       const style = doc.createElement('style');
       style.id = 'hort-gallery-compact-style';
       style.textContent = `
+        #hort-gallery-card {
+          align-self: start;
+          padding: 12px;
+          overflow: hidden;
+        }
         #hort-gallery-card .special-photo-gallery {
           display: flex;
-          gap: 1rem;
+          gap: .75rem;
           overflow-x: auto;
           scroll-snap-type: x mandatory;
-          padding: .5rem 0 1rem;
+          padding: .25rem 0 .75rem;
+          margin-top: .5rem;
           -webkit-overflow-scrolling: touch;
         }
         #hort-gallery-card .special-photo-gallery figure {
-          flex: 0 0 170px;
-          width: 170px;
+          flex: 0 0 155px;
+          width: 155px;
           margin: 0;
+          padding: 6px;
           scroll-snap-align: start;
+          border-radius: 14px;
         }
         #hort-gallery-card .special-photo-gallery figure:first-child {
-          flex-basis: 230px;
-          width: 230px;
+          flex-basis: 205px;
+          width: 205px;
         }
         #hort-gallery-card .special-photo-gallery img {
           display: block;
           width: 100%;
-          height: 220px;
+          height: 205px;
           object-fit: cover;
-          border-radius: 16px;
-        }
-        #hort-gallery-card .special-photo-gallery figure:first-child img {
-          height: 220px;
+          border-radius: 11px;
         }
         #hort-gallery-card figcaption {
-          margin-top: .5rem;
+          margin-top: .4rem;
           text-align: center;
+          font-size: .9rem;
         }
         @media (max-width: 600px) {
+          #hort-gallery-card {
+            padding: 10px;
+          }
           #hort-gallery-card .special-photo-gallery figure {
-            flex-basis: 145px;
-            width: 145px;
+            flex-basis: 140px;
+            width: 140px;
           }
           #hort-gallery-card .special-photo-gallery figure:first-child {
-            flex-basis: 205px;
-            width: 205px;
+            flex-basis: 190px;
+            width: 190px;
           }
-          #hort-gallery-card .special-photo-gallery img,
-          #hort-gallery-card .special-photo-gallery figure:first-child img {
-            height: 190px;
+          #hort-gallery-card .special-photo-gallery img {
+            height: 185px;
           }
         }
       `;
@@ -78,7 +86,7 @@
     if (!card) return;
 
     card.id = 'hort-gallery-card';
-    card.style.gridColumn = '1 / -1';
+    card.style.gridColumn = '';
 
     const figures = photos.map((photo) => `
       <figure>
