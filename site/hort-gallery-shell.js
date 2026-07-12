@@ -10,13 +10,6 @@
     { id: 'hort-blenera', src: 'assets/stammgruppen/hort/hort-blenera.svg', caption: 'Blenera', alt: 'Blenera' }
   ];
 
-  const planningPhoto = {
-    id: 'planungstag-fruehstueck-2026',
-    src: 'assets/teamtage/2026-07-10/20260710_080305.jpg',
-    caption: 'Gemeinsames Frühstück vor dem Planungstag',
-    alt: 'Gemeinsames Frühstück des Teams vor dem Planungstag am 10. Juli 2026'
-  };
-
   function addLightbox(doc, photo, returnTarget) {
     if (doc.getElementById(photo.id)) return;
 
@@ -127,43 +120,6 @@
     photos.forEach((photo) => addLightbox(doc, photo, 'stammgruppen'));
   }
 
-  function installPlanningDayPhoto(doc) {
-    if (doc.getElementById('planungstag-juli-2026')) return;
-
-    const picturesSection = doc.getElementById('bilder');
-    if (!picturesSection) return;
-
-    const planningAlbum = [...picturesSection.querySelectorAll('.moment-album')].find((album) => {
-      return /planungstag|floßlände|flosslände/i.test(album.textContent);
-    });
-
-    const figure = doc.createElement('figure');
-    figure.id = 'planungstag-juli-2026';
-    figure.innerHTML = `
-      <a class="gallery-link" href="#${planningPhoto.id}">
-        <img src="${planningPhoto.src}" alt="${planningPhoto.alt}" loading="lazy">
-      </a>
-      <figcaption>${planningPhoto.caption}</figcaption>
-    `;
-
-    const gallery = planningAlbum?.querySelector('.special-photo-gallery');
-    if (gallery) {
-      gallery.appendChild(figure);
-    } else {
-      const album = doc.createElement('article');
-      album.className = 'moment-album';
-      album.innerHTML = `
-        <h3>Planungstag 10. Juli 2026</h3>
-        <p>Gemeinsamer Start in den Planungstag mit Frühstück und Zeit zum Ankommen.</p>
-        <div class="special-photo-gallery" aria-label="Planungstag 10. Juli 2026"></div>
-      `;
-      album.querySelector('.special-photo-gallery').appendChild(figure);
-      picturesSection.appendChild(album);
-    }
-
-    addLightbox(doc, planningPhoto, 'bilder');
-  }
-
   function repairOrcaFacts(doc) {
     const facts = [
       'Orkas gehören zur Familie der Delfine und sind die größten Delfine der Welt.',
@@ -187,7 +143,6 @@
     if (!doc) return;
 
     installHortGallery(doc);
-    installPlanningDayPhoto(doc);
     repairOrcaFacts(doc);
   }
 
