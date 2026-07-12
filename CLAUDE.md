@@ -41,6 +41,11 @@ Etablierter Ablauf für hochgeladene .pptx-Dateien:
 - Inhalte aus Dokumenten, die die Nutzerin selbst hochlädt, dürfen frei verwendet werden.
 - Bestätigt urheberrechtlich geschützte Drittanbieter-Charakterbilder (z. B. Pokémon, Disney, Nintendo, Marvel) werden nicht auf der öffentlichen Website eingebettet – auch nicht auf ausdrückliche Anweisung, da die Kita-Leitung solche Drittrechte nicht einseitig klären kann. Stattdessen: Original-Textinhalte als Alternative anbieten und die Einschränkung kurz erklären.
 
+## Kontext-Management
+- Wenn der Gesprächskontext in einer Session sehr groß wird (Richtwert: ca. 500k Tokens), proaktiv (ohne Nachfrage) eine kurze Zusammenfassung der in dieser Session vorgenommenen Änderungen unten unter „Session-Log" ergänzen und die Nutzerin darauf hinweisen, dass jetzt ein guter Zeitpunkt für `/clear` ist. `/clear` selbst kann nicht automatisch ausgelöst werden (kein Hook-Event für Token-Schwellen, kein Hook kann Slash-Commands ausführen) – die Nutzerin muss es manuell eingeben.
+
+### Session-Log
+
 ## Architektur-Hinweis
 - `site/index.html` ist die zentrale, statische Seite (Stammgruppen, Lernwerkstätten, Hauswirtschaft, Fortbildungen, Bilder & Momente, Checklisten, ...), gestylt über `site/style.css` und `site/checklists.css`.
 - `site/hort-gallery-shell.js` und `checklists.js` enthalten noch etwas JS-DOM-Manipulation zur Laufzeit (Legacy-Muster). Wo möglich, Inhalte lieber direkt statisch in `index.html` schreiben statt neue JS-Injection hinzuzufügen – hat in der Vergangenheit zu Duplikat-Bugs geführt (z. B. doppelte Karten/Fotos, wenn Inhalt sowohl statisch als auch per JS eingefügt wurde).
