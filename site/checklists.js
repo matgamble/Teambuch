@@ -1,52 +1,9 @@
 (() => {
   const personalratImages = {
-    info: [
-      'assets/aktuelles/personalratswahl-2026/img1-01.txt',
-      'assets/aktuelles/personalratswahl-2026/img1-02.txt'
-    ],
-    dienststelle: [
-      'assets/aktuelles/personalratswahl-2026/img2-01.txt',
-      'assets/aktuelles/personalratswahl-2026/img2-02.txt'
-    ],
-    termin: [
-      'assets/aktuelles/personalratswahl-2026/img3-01.txt',
-      'assets/aktuelles/personalratswahl-2026/img3-02.txt'
-    ],
-    kandidierende: [
-      'assets/aktuelles/personalratswahl-2026/img4-01.txt',
-      'assets/aktuelles/personalratswahl-2026/img4-02.txt',
-      'assets/aktuelles/personalratswahl-2026/img4-03.txt'
-    ]
-  };
-
-  const personalratImageCache = new Map();
-
-  const getPersonalratImage = (key) => {
-    if (!personalratImageCache.has(key)) {
-      const paths = personalratImages[key] || [];
-      const imagePromise = Promise.all(paths.map(async (path) => {
-        const response = await fetch(path);
-        if (!response.ok) throw new Error(`Bild konnte nicht geladen werden: ${path}`);
-        return response.text();
-      })).then((parts) => `data:image/jpeg;base64,${parts.join('').replace(/\s/g, '')}`);
-      personalratImageCache.set(key, imagePromise);
-    }
-    return personalratImageCache.get(key);
-  };
-
-  const hydratePersonalratImages = () => {
-    document.querySelectorAll('img[data-personalrat-image]').forEach((image) => {
-      const key = image.dataset.personalratImage;
-      getPersonalratImage(key)
-        .then((source) => {
-          image.src = source;
-          image.classList.remove('image-loading');
-        })
-        .catch(() => {
-          image.alt = 'Das Bild konnte leider nicht geladen werden.';
-          image.classList.remove('image-loading');
-        });
-    });
+    info: '../20260711_165929.jpg',
+    dienststelle: '../20260711_165943.jpg',
+    termin: '../20260711_165952.jpg',
+    kandidierende: '../20260711_170007.jpg'
   };
 
   const addAktuellesLink = (container) => {
@@ -120,25 +77,25 @@
         <div class="special-photo-gallery" aria-label="Unterlagen zur Personalratswahl 2026">
           <figure>
             <a class="gallery-link" href="#personalrat-info">
-              <img class="image-loading" data-personalrat-image="info" alt="Informationen: Personalrat wählen und mitbestimmen">
+              <img src="${personalratImages.info}" alt="Informationen: Personalrat wählen und mitbestimmen" loading="lazy">
             </a>
             <figcaption>Warum Personalrat?</figcaption>
           </figure>
           <figure>
             <a class="gallery-link" href="#personalrat-dienststelle">
-              <img class="image-loading" data-personalrat-image="dienststelle" alt="Kandidierende für den Personalrat der Dienststelle 4d">
+              <img src="${personalratImages.dienststelle}" alt="Kandidierende für den Personalrat der Dienststelle 4d" loading="lazy">
             </a>
             <figcaption>Personalrat · Dienststelle 4d</figcaption>
           </figure>
           <figure>
             <a class="gallery-link" href="#personalrat-termin">
-              <img class="image-loading" data-personalrat-image="termin" alt="Personalratswahl am 29. Juli 2026">
+              <img src="${personalratImages.termin}" alt="Personalratswahl am 29. Juli 2026" loading="lazy">
             </a>
             <figcaption>Wahltermin und Dienststelle</figcaption>
           </figure>
           <figure>
             <a class="gallery-link" href="#personalrat-kandidierende">
-              <img class="image-loading" data-personalrat-image="kandidierende" alt="Kandidatinnen und Kandidaten für Arbeitnehmerinnen und Arbeitnehmer">
+              <img src="${personalratImages.kandidierende}" alt="Kandidatinnen und Kandidaten für Arbeitnehmerinnen und Arbeitnehmer" loading="lazy">
             </a>
             <figcaption>Kandidierende der Arbeitnehmer*innen</figcaption>
           </figure>
@@ -155,13 +112,13 @@
     }
 
     const lightboxes = [
-      ['personalrat-info', 'info', 'Informationen: Personalrat wählen und mitbestimmen'],
-      ['personalrat-dienststelle', 'dienststelle', 'Personalrat der Dienststelle 4d'],
-      ['personalrat-termin', 'termin', 'Personalratswahl am 29. Juli 2026'],
-      ['personalrat-kandidierende', 'kandidierende', 'Kandidierende der Arbeitnehmer*innen']
+      ['personalrat-info', personalratImages.info, 'Informationen: Personalrat wählen und mitbestimmen'],
+      ['personalrat-dienststelle', personalratImages.dienststelle, 'Personalrat der Dienststelle 4d'],
+      ['personalrat-termin', personalratImages.termin, 'Personalratswahl am 29. Juli 2026'],
+      ['personalrat-kandidierende', personalratImages.kandidierende, 'Kandidierende der Arbeitnehmer*innen']
     ];
 
-    lightboxes.forEach(([id, key, caption]) => {
+    lightboxes.forEach(([id, src, caption]) => {
       if (document.getElementById(id)) return;
       const lightbox = document.createElement('div');
       lightbox.id = id;
@@ -170,7 +127,7 @@
         <a class="lightbox-close-area" href="#personalratswahlen" aria-label="Vollbild schließen"></a>
         <div class="lightbox-content">
           <a class="lightbox-close" href="#personalratswahlen" aria-label="Vollbild schließen">×</a>
-          <img class="image-loading" data-personalrat-image="${key}" alt="${caption}">
+          <img src="${src}" alt="${caption}">
           <p>${caption}</p>
         </div>
       `;
@@ -180,8 +137,6 @@
     const sommerfestCard = [...document.querySelectorAll('#checklisten .check-card')]
       .find((card) => card.querySelector('h3')?.textContent.trim() === 'Sommerfest 2026');
     sommerfestCard?.remove();
-
-    hydratePersonalratImages();
   };
 
   buildAktuellesSection();
