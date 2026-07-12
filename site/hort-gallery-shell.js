@@ -5,6 +5,8 @@
   const photos = [
     { id: 'hort-gruppenfoto', src: 'assets/stammgruppen/hort/hort-gruppenfoto.svg', caption: 'Stammgruppe Hort', alt: 'Stammgruppe Hort' },
     { id: 'hort-raum', src: 'assets/stammgruppen/hort/hort-raum.jpg', caption: 'Unser Hort-Raum', alt: 'Räumlichkeiten des Hort' },
+    { id: 'hort-dachterrasse', src: 'assets/stammgruppen/gemeinsame-raeume/dachterrasse.jpg', caption: 'Dachterrasse (gemeinsam mit der Vorschule)', alt: 'Dachterrasse, die sich Hort und Vorschule teilen' },
+    { id: 'hort-hausaufgabenraum', src: 'assets/stammgruppen/gemeinsame-raeume/hausaufgabenraum.jpg', caption: 'Hausaufgabenraum (gemeinsam mit der Vorschule)', alt: 'Hausaufgabenraum, den sich Hort und Vorschule teilen' },
     { id: 'hort-chiara', src: 'assets/stammgruppen/hort/hort-chiara.svg', caption: 'Chiara', alt: 'Chiara' },
     { id: 'hort-matze', src: 'assets/stammgruppen/hort/hort-matze.svg', caption: 'Matze', alt: 'Matze' },
     { id: 'hort-franzi', src: 'assets/stammgruppen/hort/hort-franzi.svg', caption: 'Franzi', alt: 'Franzi' },
