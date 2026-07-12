@@ -123,30 +123,11 @@
     photos.forEach((photo) => addLightbox(doc, photo, 'stammgruppen'));
   }
 
-  function repairOrcaFacts(doc) {
-    const facts = [
-      'Orkas gehören zur Familie der Delfine und sind die größten Delfine der Welt.',
-      'Orkas schlafen mit nur einer Gehirnhälfte, weil sie zum Atmen bewusst an die Wasseroberfläche kommen müssen.',
-      'Jede Orka-Familie entwickelt eigene Rufe und Dialekte, die von Generation zu Generation weitergegeben werden.',
-      'Orkas leben in stabilen Familiengruppen und bleiben oft ihr ganzes Leben eng mit ihrer Mutter verbunden.',
-      'An der Form der Rückenflosse und am hellen Sattelfleck können Forschende einzelne Orkas unterscheiden.',
-      'Weibliche Orkas können mehr als 80 Jahre alt werden.'
-    ];
-
-    let factIndex = 0;
-    doc.querySelectorAll('.orka-fakt .orka-quote').forEach((quote) => {
-      if (/orka/i.test(quote.textContent)) return;
-      quote.textContent = `„${facts[factIndex % facts.length]}“`;
-      factIndex += 1;
-    });
-  }
-
   function installGalleries() {
     const doc = frame.contentDocument;
     if (!doc) return;
 
     installHortGallery(doc);
-    repairOrcaFacts(doc);
   }
 
   frame.addEventListener('load', installGalleries);
