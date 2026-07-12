@@ -357,6 +357,21 @@ p {
   transform: translateY(-50%);
 }
 
+.slideshow-caption {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80vw;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 18px;
+  border-radius: 16px;
+}
+
 .slideshow-counter {
   position: absolute;
   bottom: 24px;

@@ -1,5 +1,5 @@
 (() => {
-  function openSlideshow(images, title, startIndex) {
+  function openSlideshow(slides, title, startIndex) {
     let index = startIndex || 0;
 
     const overlay = document.createElement('div');
@@ -9,18 +9,23 @@
       <button class="slideshow-prev" aria-label="Vorherige Folie">&lsaquo;</button>
       <div class="slideshow-viewport"><img class="slideshow-image" alt=""></div>
       <button class="slideshow-next" aria-label="Nächste Folie">&rsaquo;</button>
+      <div class="slideshow-caption"></div>
       <div class="slideshow-counter"></div>
     `;
     document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';
 
     const imgEl = overlay.querySelector('.slideshow-image');
+    const captionEl = overlay.querySelector('.slideshow-caption');
     const counterEl = overlay.querySelector('.slideshow-counter');
 
     function render() {
-      imgEl.src = images[index];
-      imgEl.alt = `${title} – Folie ${index + 1} von ${images.length}`;
-      counterEl.textContent = `${index + 1} / ${images.length}`;
+      const slide = slides[index];
+      imgEl.src = slide.src;
+      imgEl.alt = slide.alt || title;
+      captionEl.textContent = slide.caption || '';
+      captionEl.style.display = slide.caption ? '' : 'none';
+      counterEl.textContent = `${index + 1} / ${slides.length}`;
     }
 
     function close() {
@@ -30,12 +35,12 @@
     }
 
     function next() {
-      index = (index + 1) % images.length;
+      index = (index + 1) % slides.length;
       render();
     }
 
     function prev() {
-      index = (index - 1 + images.length) % images.length;
+      index = (index - 1 + slides.length) % slides.length;
       render();
     }
 
@@ -66,14 +71,22 @@
       touchStartX = null;
     });
 
+    if (slides.length <= 1) {
+      overlay.querySelector('.slideshow-prev').style.display = 'none';
+      overlay.querySelector('.slideshow-next').style.display = 'none';
+      counterEl.style.display = 'none';
+    }
+
     render();
   }
 
+  // Fortbildungen-style triggers: whole card opens a named deck of images.
   document.querySelectorAll('.slideshow-trigger').forEach((trigger) => {
     const open = () => {
       const images = JSON.parse(trigger.dataset.slideshowImages);
       const title = trigger.dataset.slideshowTitle || '';
-      openSlideshow(images, title, 0);
+      const slides = images.map((src) => ({ src, alt: title }));
+      openSlideshow(slides, title, 0);
     };
     trigger.addEventListener('click', open);
     trigger.addEventListener('keydown', (e) => {
@@ -81,6 +94,35 @@
         e.preventDefault();
         open();
       }
+    });
+  });
+
+  // Every existing photo gallery: tapping an image opens the same
+  // fullscreen viewer, starting at the tapped image, swipeable through
+  // the rest of that gallery.
+  document.querySelectorAll('.special-photo-gallery').forEach((gallery) => {
+    const figures = [...gallery.querySelectorAll(':scope > figure')];
+    if (!figures.length) return;
+
+    const slides = figures.map((figure) => {
+      const img = figure.querySelector('img');
+      const caption = figure.querySelector('figcaption');
+      return {
+        src: img.getAttribute('src'),
+        alt: img.getAttribute('alt') || '',
+        caption: caption ? caption.textContent.trim() : ''
+      };
+    });
+
+    const title = gallery.getAttribute('aria-label') || '';
+
+    figures.forEach((figure, i) => {
+      const link = figure.querySelector('a.gallery-link');
+      if (!link) return;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSlideshow(slides, title, i);
+      });
     });
   });
 })();
