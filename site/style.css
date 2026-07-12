@@ -445,10 +445,6 @@ p {
   text-align: center;
 }
 
-.moment-card h3 {
-  margin-top: 14px;
-}
-
 .special-moments {
   background:
     linear-gradient(135deg, rgba(248, 241, 223, 0.98), rgba(231, 234, 223, 0.9));
