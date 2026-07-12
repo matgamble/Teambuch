@@ -130,38 +130,56 @@
   function installPlanningDayPhoto(doc) {
     if (doc.getElementById('planungstag-juli-2026')) return;
 
-    const planningSection = doc.getElementById('planungstage')
-      || [...doc.querySelectorAll('section')].find((section) => {
-        const heading = section.querySelector('h2');
-        return heading && heading.textContent.trim().toLowerCase().includes('planungstag');
-      });
+    const picturesSection = doc.getElementById('bilder');
+    if (!picturesSection) return;
 
-    if (!planningSection) return;
+    const planningAlbum = [...picturesSection.querySelectorAll('.moment-album')].find((album) => {
+      return /planungstag|floßlände|flosslände/i.test(album.textContent);
+    });
 
-    const album = doc.createElement('article');
-    album.id = 'planungstag-juli-2026';
-    album.className = 'moment-album';
-    album.innerHTML = `
-      <h3>Planungstag 10. Juli 2026</h3>
-      <p>Gemeinsamer Start in den Planungstag mit Frühstück und Zeit zum Ankommen.</p>
-      <div class="special-photo-gallery" aria-label="Planungstag 10. Juli 2026">
-        <figure>
-          <a class="gallery-link" href="#${planningPhoto.id}">
-            <img src="${planningPhoto.src}" alt="${planningPhoto.alt}" loading="lazy">
-          </a>
-          <figcaption>${planningPhoto.caption}</figcaption>
-        </figure>
-      </div>
+    const figure = doc.createElement('figure');
+    figure.id = 'planungstag-juli-2026';
+    figure.innerHTML = `
+      <a class="gallery-link" href="#${planningPhoto.id}">
+        <img src="${planningPhoto.src}" alt="${planningPhoto.alt}" loading="lazy">
+      </a>
+      <figcaption>${planningPhoto.caption}</figcaption>
     `;
 
-    const existingAlbum = planningSection.querySelector('.moment-album');
-    if (existingAlbum?.parentElement) {
-      existingAlbum.insertAdjacentElement('afterend', album);
+    const gallery = planningAlbum?.querySelector('.special-photo-gallery');
+    if (gallery) {
+      gallery.appendChild(figure);
     } else {
-      planningSection.appendChild(album);
+      const album = doc.createElement('article');
+      album.className = 'moment-album';
+      album.innerHTML = `
+        <h3>Planungstag 10. Juli 2026</h3>
+        <p>Gemeinsamer Start in den Planungstag mit Frühstück und Zeit zum Ankommen.</p>
+        <div class="special-photo-gallery" aria-label="Planungstag 10. Juli 2026"></div>
+      `;
+      album.querySelector('.special-photo-gallery').appendChild(figure);
+      picturesSection.appendChild(album);
     }
 
-    addLightbox(doc, planningPhoto, 'planungstag-juli-2026');
+    addLightbox(doc, planningPhoto, 'bilder');
+  }
+
+  function repairOrcaFacts(doc) {
+    const facts = [
+      'Orkas gehören zur Familie der Delfine und sind die größten Delfine der Welt.',
+      'Orkas schlafen mit nur einer Gehirnhälfte, weil sie zum Atmen bewusst an die Wasseroberfläche kommen müssen.',
+      'Jede Orka-Familie entwickelt eigene Rufe und Dialekte, die von Generation zu Generation weitergegeben werden.',
+      'Orkas leben in stabilen Familiengruppen und bleiben oft ihr ganzes Leben eng mit ihrer Mutter verbunden.',
+      'An der Form der Rückenflosse und am hellen Sattelfleck können Forschende einzelne Orkas unterscheiden.',
+      'Weibliche Orkas können mehr als 80 Jahre alt werden.'
+    ];
+
+    let factIndex = 0;
+    doc.querySelectorAll('.orka-fakt .orka-quote').forEach((quote) => {
+      if (/orka/i.test(quote.textContent)) return;
+      quote.textContent = `„${facts[factIndex % facts.length]}“`;
+      factIndex += 1;
+    });
   }
 
   function installGalleries() {
@@ -170,8 +188,10 @@
 
     installHortGallery(doc);
     installPlanningDayPhoto(doc);
+    repairOrcaFacts(doc);
   }
 
   frame.addEventListener('load', installGalleries);
   window.setTimeout(installGalleries, 250);
+  window.setTimeout(installGalleries, 900);
 })();
