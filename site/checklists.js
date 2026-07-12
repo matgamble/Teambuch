@@ -141,6 +141,13 @@
 
   buildAktuellesSection();
 
+  document.querySelectorAll('.mobile-menu nav a, .toc-dropdown .toc a').forEach((link) => {
+    link.addEventListener('click', () => {
+      const details = link.closest('details');
+      if (details) details.open = false;
+    });
+  });
+
   const forms = document.querySelectorAll('.interactive-checklist[data-checklist]');
 
   forms.forEach((form) => {
