@@ -716,6 +716,23 @@ p {
     max-width: 720px;
   }
 
+  .mobile-menu summary {
+    display: none;
+  }
+
+  .mobile-menu nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0;
+  }
+
+  .mobile-menu a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-left-width: 3px;
+  }
+
   .page {
     scroll-margin-top: 90px;
   }
