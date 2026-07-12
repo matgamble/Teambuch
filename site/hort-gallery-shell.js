@@ -10,10 +10,31 @@
     { id: 'hort-blenera', src: 'assets/stammgruppen/hort/hort-blenera.svg', caption: 'Blenera', alt: 'Blenera' }
   ];
 
-  function installGallery() {
-    const doc = frame.contentDocument;
-    if (!doc) return;
+  const planningPhoto = {
+    id: 'planungstag-fruehstueck-2026',
+    src: '../20260710_080305.jpg',
+    caption: 'Gemeinsames Frühstück vor dem Planungstag',
+    alt: 'Gemeinsames Frühstück des Teams vor dem Planungstag am 10. Juli 2026'
+  };
 
+  function addLightbox(doc, photo, returnTarget) {
+    if (doc.getElementById(photo.id)) return;
+
+    const lightbox = doc.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.id = photo.id;
+    lightbox.innerHTML = `
+      <a class="lightbox-close-area" href="#${returnTarget}" aria-label="Vollbild schließen"></a>
+      <div class="lightbox-content">
+        <a class="lightbox-close" href="#${returnTarget}" aria-label="Vollbild schließen">×</a>
+        <img src="${photo.src}" alt="${photo.alt}">
+        <p>${photo.caption}</p>
+      </div>
+    `;
+    doc.body.appendChild(lightbox);
+  }
+
+  function installHortGallery(doc) {
     if (!doc.getElementById('hort-gallery-compact-style')) {
       const style = doc.createElement('style');
       style.id = 'hort-gallery-compact-style';
@@ -103,23 +124,54 @@
       <div class="special-photo-gallery" aria-label="Stammgruppe Hort">${figures}</div>
     `;
 
-    photos.forEach((photo) => {
-      if (doc.getElementById(photo.id)) return;
-      const lightbox = doc.createElement('div');
-      lightbox.className = 'lightbox';
-      lightbox.id = photo.id;
-      lightbox.innerHTML = `
-        <a class="lightbox-close-area" href="#stammgruppen" aria-label="Vollbild schließen"></a>
-        <div class="lightbox-content">
-          <a class="lightbox-close" href="#stammgruppen" aria-label="Vollbild schließen">×</a>
-          <img src="${photo.src}" alt="${photo.alt}">
-          <p>${photo.caption}</p>
-        </div>
-      `;
-      doc.body.appendChild(lightbox);
-    });
+    photos.forEach((photo) => addLightbox(doc, photo, 'stammgruppen'));
   }
 
-  frame.addEventListener('load', installGallery);
-  window.setTimeout(installGallery, 250);
+  function installPlanningDayPhoto(doc) {
+    if (doc.getElementById('planungstag-juli-2026')) return;
+
+    const planningSection = doc.getElementById('planungstage')
+      || [...doc.querySelectorAll('section')].find((section) => {
+        const heading = section.querySelector('h2');
+        return heading && heading.textContent.trim().toLowerCase().includes('planungstag');
+      });
+
+    if (!planningSection) return;
+
+    const album = doc.createElement('article');
+    album.id = 'planungstag-juli-2026';
+    album.className = 'moment-album';
+    album.innerHTML = `
+      <h3>Planungstag 10. Juli 2026</h3>
+      <p>Gemeinsamer Start in den Planungstag mit Frühstück und Zeit zum Ankommen.</p>
+      <div class="special-photo-gallery" aria-label="Planungstag 10. Juli 2026">
+        <figure>
+          <a class="gallery-link" href="#${planningPhoto.id}">
+            <img src="${planningPhoto.src}" alt="${planningPhoto.alt}" loading="lazy">
+          </a>
+          <figcaption>${planningPhoto.caption}</figcaption>
+        </figure>
+      </div>
+    `;
+
+    const existingAlbum = planningSection.querySelector('.moment-album');
+    if (existingAlbum?.parentElement) {
+      existingAlbum.insertAdjacentElement('afterend', album);
+    } else {
+      planningSection.appendChild(album);
+    }
+
+    addLightbox(doc, planningPhoto, 'planungstag-juli-2026');
+  }
+
+  function installGalleries() {
+    const doc = frame.contentDocument;
+    if (!doc) return;
+
+    installHortGallery(doc);
+    installPlanningDayPhoto(doc);
+  }
+
+  frame.addEventListener('load', installGalleries);
+  window.setTimeout(installGalleries, 250);
 })();
