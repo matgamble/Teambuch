@@ -4,6 +4,7 @@
 
   const photos = [
     { id: 'hort-gruppenfoto', src: 'assets/stammgruppen/hort/hort-gruppenfoto.svg', caption: 'Stammgruppe Hort', alt: 'Stammgruppe Hort' },
+    { id: 'hort-raum', src: 'assets/stammgruppen/hort/hort-raum.jpg', caption: 'Unser Hort-Raum', alt: 'Räumlichkeiten des Hort' },
     { id: 'hort-chiara', src: 'assets/stammgruppen/hort/hort-chiara.svg', caption: 'Chiara', alt: 'Chiara' },
     { id: 'hort-matze', src: 'assets/stammgruppen/hort/hort-matze.svg', caption: 'Matze', alt: 'Matze' },
     { id: 'hort-franzi', src: 'assets/stammgruppen/hort/hort-franzi.svg', caption: 'Franzi', alt: 'Franzi' },
