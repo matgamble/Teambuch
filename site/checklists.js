@@ -32,7 +32,7 @@
       <p>Hier findest du zeitlich aktuelle Themen, Planungen und Informationen, die das Team gerade braucht.</p>
       <div class="checklist-grid">
         <article class="check-card checklist-link-card">
-          <h3>Sommerfest 2026</h3>
+          <h3>Sommerfest am 17. Juli 2026</h3>
           <p>Die komplette Planung mit Zeiten, Zuständigkeiten, Stationen und Ablauf.</p>
           <a class="checklist-open-link" href="#sommerfest-2026">Planung öffnen</a>
         </article>
@@ -135,7 +135,7 @@
     });
 
     const sommerfestCard = [...document.querySelectorAll('#checklisten .check-card')]
-      .find((card) => card.querySelector('h3')?.textContent.trim() === 'Sommerfest 2026');
+      .find((card) => card.querySelector('h3')?.textContent.trim() === 'Sommerfest am 17. Juli 2026');
     sommerfestCard?.remove();
   };
 
