@@ -12,7 +12,7 @@
 
   const planningPhoto = {
     id: 'planungstag-fruehstueck-2026',
-    src: '../20260710_080305.jpg',
+    src: 'assets/teamtage/2026-07-10/20260710_080305.jpg',
     caption: 'Gemeinsames Frühstück vor dem Planungstag',
     alt: 'Gemeinsames Frühstück des Teams vor dem Planungstag am 10. Juli 2026'
   };

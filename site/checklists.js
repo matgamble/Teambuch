@@ -1,9 +1,9 @@
 (() => {
   const personalratImages = {
-    info: '../20260711_165929.jpg',
-    dienststelle: '../20260711_165943.jpg',
-    termin: '../20260711_165952.jpg',
-    kandidierende: '../20260711_170007.jpg'
+    info: 'assets/aktuelles/personalratswahl-2026/20260711_165929.jpg',
+    dienststelle: 'assets/aktuelles/personalratswahl-2026/20260711_165943.jpg',
+    termin: 'assets/aktuelles/personalratswahl-2026/20260711_165952.jpg',
+    kandidierende: 'assets/aktuelles/personalratswahl-2026/20260711_170007.jpg'
   };
 
   const addAktuellesLink = (container) => {
