@@ -202,19 +202,31 @@ span.contact-item {
 
 .contact-qr {
   margin: 16px auto 0;
-  max-width: 260px;
+  max-width: 220px;
   text-align: center;
+  background: #f3efe6;
+  border-radius: 18px;
+  border-left: 5px solid #c58b2b;
+  padding: 16px 16px 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.contact-qr-title {
+  margin: 0 0 10px;
+  color: #12264a;
+  font-weight: 800;
+  font-size: 0.95rem;
 }
 
 .contact-qr-img {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: block;
 }
 
 .contact-qr-caption {
   margin: 10px 0 0;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #5d765d;
   font-weight: 700;
   line-height: 1.4;
