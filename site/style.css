@@ -325,6 +325,42 @@ p {
   cursor: pointer;
 }
 
+.card-thumb-wrap {
+  position: relative;
+}
+
+.ruhezeit-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #17284a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.ruhezeit-badge svg {
+  color: #c58b2b;
+}
+
+.ruhezeit-legend-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: #17284a;
+}
+
+.ruhezeit-legend-icon svg {
+  color: #c58b2b;
+}
+
 .slideshow-overlay {
   position: fixed;
   inset: 0;
