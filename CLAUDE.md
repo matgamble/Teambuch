@@ -17,6 +17,7 @@ Dieses Repository ist das digitale Teambuch der Kita Reischlestraße (Augsburg).
 - `site/slideshow.js` erkennt jede `.special-photo-gallery` automatisch und macht sie im Vollbild swipebar (Touch, Pfeiltasten, Escape). Für kuratierte Foliendecks (z. B. Fortbildungen) stattdessen eine Karte mit `class="slideshow-trigger"` + `data-slideshow-images` (JSON-Array der Bildpfade) + `data-slideshow-title` verwenden.
 - Skriptreihenfolge am Ende von `site/index.html` beachten: `checklists.js` muss vor `slideshow.js` geladen werden, damit dynamisch erzeugte Galerien schon im DOM stehen, wenn slideshow.js scannt.
 - CSS-Grid: Karten (`.card`, `.check-card`, `.moment-card`) brauchen `min-width: 0`, sonst sprengen breite Foto-Galerien darin die Grid-Spaltenbreite.
+- Reihenfolge der Bilder innerhalb einer Galerie immer: 1. Teambild/Gruppenfoto, 2. Einzelbilder der Personen, 3. Raumbilder.
 
 ## Git-Workflow
 - Entwickelt wird ausschließlich auf dem Branch `claude/teambuch-visibility-6bk15p`.
