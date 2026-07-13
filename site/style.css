@@ -373,8 +373,8 @@ p {
 }
 
 .slideshow-viewport {
-  width: min(92vw, 1400px);
-  height: min(85vh, 800px);
+  width: min(96vw, 1900px);
+  height: min(92vh, 1320px);
   display: flex;
   align-items: center;
   justify-content: center;
