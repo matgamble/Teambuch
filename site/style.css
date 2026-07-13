@@ -200,6 +200,26 @@ span.contact-item {
   box-shadow: none;
 }
 
+.contact-qr {
+  margin: 16px auto 0;
+  max-width: 260px;
+  text-align: center;
+}
+
+.contact-qr-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.contact-qr-caption {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: #5d765d;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .page::before {
   content: "";
   position: absolute;
