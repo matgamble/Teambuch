@@ -308,6 +308,10 @@ span.contact-item {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
+.checklist-feedback {
+  margin: 28px auto 0;
+}
+
 .contact-qr-title {
   margin: 0 0 12px;
   display: flex;
