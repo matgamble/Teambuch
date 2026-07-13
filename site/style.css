@@ -200,6 +200,65 @@ span.contact-item {
   box-shadow: none;
 }
 
+.contact-phone-dropdown {
+  margin: 14px auto 0;
+  max-width: 420px;
+  text-align: left;
+}
+
+.contact-phone-dropdown summary {
+  cursor: pointer;
+  list-style: none;
+  background: #eef1e7;
+  color: #12264a;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: 1px solid rgba(93, 118, 93, 0.25);
+}
+
+.contact-phone-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-phone-dropdown summary::after {
+  content: "▾";
+  float: right;
+}
+
+.contact-phone-dropdown[open] summary::after {
+  content: "▴";
+}
+
+.contact-phone-content {
+  padding: 12px 8px 4px;
+  font-size: 0.85rem;
+  color: #12264a;
+  line-height: 1.5;
+}
+
+.contact-phone-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+}
+
+.contact-phone-list li {
+  background: #f3efe6;
+  border-left: 4px solid #c58b2b;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.contact-phone-content p {
+  margin: 6px 0;
+}
+
 .contact-qr {
   margin: 16px auto 0;
   max-width: 220px;
