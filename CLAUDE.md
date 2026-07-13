@@ -57,6 +57,16 @@ Etablierter Ablauf für hochgeladene .pptx-Dateien:
 - Repository am Ende der Session aufgeräumt (Roh-Uploads und ungenutzte Bilder aus dem Hauptverzeichnis entfernt); `main` und der Feature-Branch waren zum Zeitpunkt dieses Eintrags exakt synchron.
 - Offen/unerledigt: Ein von der Nutzerin hochgeladenes Foto (sollte „ordentlicher und kreativer" umgesetzt werden) konnte in dieser Session nicht angezeigt werden – wiederholte Anzeigeversuche (Originalgröße, verkleinert, zugeschnitten, ohne EXIF) wurden alle von der Vision-API abgelehnt, während andere Testbilder problemlos funktionierten. Das deutet eher auf eine inhaltliche Ablehnung durch einen Sicherheitsfilter hin als auf ein Größen-/Technikproblem. Falls die Nutzerin darauf zurückkommt: neu hochladen lassen und ggf. nach dem genauen Bildinhalt fragen, falls es erneut nicht angezeigt werden kann.
 
+### Fehlerprotokoll
+
+Ab sofort werden wiederkehrende oder ungelöste technische Fehler hier kurz protokolliert (Datum, Kurzbeschreibung, was schon versucht wurde), damit eine neue Session nicht bei null anfangen muss. Bei neuen relevanten Fehlern bitte kurz ergänzen.
+
+**13. Juli 2026 – Bilder werden beim Anzeigen zeitweise abgelehnt („media removed — rejected by API")**
+- Trat mehrfach auf: bei einem von der Nutzerin hochgeladenen Foto ebenso wie bei selbst erzeugten Playwright-Screenshots (z. B. Vorschau-Bilder von Website-Änderungen).
+- Nicht dauerhaft reproduzierbar: Derselbe Bildinhalt hat, unter neuem Dateinamen erneut gespeichert (z. B. als JPEG neu komprimiert oder um ca. 40 % verkleinert), bei einem späteren Versuch oft funktioniert. Ein einfaches Test-Bild (einfarbiges Quadrat) hat währenddessen immer zuverlässig funktioniert – die generelle Bildanzeige war also nicht komplett ausgefallen.
+- Deutet eher auf ein temporäres/flackerndes Anzeigeproblem hin als auf ein echtes Größen- oder Inhaltsproblem (auch wenn eine inhaltliche Ablehnung durch einen Sicherheitsfilter bei einzelnen Fällen nicht auszuschließen ist, siehe Eintrag oben).
+- Workaround, der wiederholt geholfen hat: Bei „rejected by API" die Datei unter neuem Namen erneut speichern bzw. leicht verändern (Format wechseln, z. B. PNG → JPEG, oder Auflösung um ca. 40 % verkleinern) und erneut per Read-Tool versuchen. Meist reicht ein zweiter oder dritter Versuch.
+
 ## Architektur-Hinweis
 - `site/index.html` ist die zentrale, statische Seite (Stammgruppen, Lernwerkstätten, Hauswirtschaft, Fortbildungen, Bilder & Momente, Checklisten, ...), gestylt über `site/style.css` und `site/checklists.css`.
 - Wo möglich, Inhalte lieber direkt statisch in `index.html` schreiben statt JS-Injection zur Laufzeit hinzuzufügen – hat in der Vergangenheit zu Duplikat-Bugs geführt (z. B. doppelte Karten/Fotos, wenn Inhalt sowohl statisch als auch per JS eingefügt wurde). `site/hort-gallery-shell.js` (Hort-Fotogalerie per Laufzeit-Injection ins iframe) wurde deshalb entfernt und die Hort-Galerie direkt statisch in `site/index.html` eingebaut (Juli 2026) – dadurch bekommt sie wie alle anderen Galerien automatisch die swipebare Vollbildansicht von `slideshow.js`. Aus demselben Grund wurden auch die vormals per `checklists.js` zur Laufzeit erzeugten Abschnitte „Aktuelles" und „Personalratswahl 2026" statisch in `site/index.html` geschrieben.
