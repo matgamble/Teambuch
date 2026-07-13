@@ -152,13 +152,28 @@ body::before {
 }
 
 .contact-bar-label {
-  margin: 0 0 12px;
-  text-align: center;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: #c58b2b;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.11em;
   font-size: 0.85rem;
+}
+
+.contact-bar-label::before,
+.contact-bar-label::after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background: linear-gradient(90deg, transparent, rgba(197, 139, 43, 0.55));
+}
+
+.contact-bar-label::after {
+  background: linear-gradient(90deg, rgba(197, 139, 43, 0.55), transparent);
 }
 
 .contact-bar-items {
@@ -171,10 +186,10 @@ body::before {
 .contact-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 9px 14px;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
   background: #f3efe6;
-  border-radius: 14px;
+  border-radius: 16px;
   color: #12264a;
   text-decoration: none;
   font-weight: 700;
@@ -182,6 +197,22 @@ body::before {
   border-left: 5px solid #c58b2b;
   white-space: nowrap;
   transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+.contact-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(197, 139, 43, 0.16);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+span.contact-item .contact-item-icon {
+  background: rgba(93, 118, 93, 0.18);
 }
 
 a.contact-item {
@@ -209,13 +240,20 @@ span.contact-item {
 .contact-phone-dropdown summary {
   cursor: pointer;
   list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background: #eef1e7;
   color: #12264a;
-  border-radius: 14px;
-  padding: 10px 14px;
+  border-radius: 16px;
+  padding: 8px 14px 8px 8px;
   font-weight: 800;
   font-size: 0.9rem;
   border: 1px solid rgba(93, 118, 93, 0.25);
+}
+
+.contact-phone-dropdown summary .contact-item-icon {
+  background: rgba(93, 118, 93, 0.18);
 }
 
 .contact-phone-dropdown summary::-webkit-details-marker {
@@ -224,7 +262,7 @@ span.contact-item {
 
 .contact-phone-dropdown summary::after {
   content: "▾";
-  float: right;
+  margin-left: auto;
 }
 
 .contact-phone-dropdown[open] summary::after {
@@ -265,22 +303,42 @@ span.contact-item {
   text-align: center;
   background: #f3efe6;
   border-radius: 18px;
-  border-left: 5px solid #c58b2b;
+  border-left: 5px solid #25a873;
   padding: 16px 16px 14px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .contact-qr-title {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   color: #12264a;
   font-weight: 800;
   font-size: 0.95rem;
 }
 
+.contact-qr-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(37, 168, 115, 0.16);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
 .contact-qr-img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   display: block;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(37, 168, 115, 0.25);
 }
 
 .contact-qr-caption {
