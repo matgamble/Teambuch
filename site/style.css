@@ -859,6 +859,41 @@ p {
   margin-top: 16px;
 }
 
+.day-schedule-wrap {
+  overflow-x: auto;
+  margin: 14px 0;
+}
+
+.day-schedule {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+.day-schedule th,
+.day-schedule td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(23, 40, 74, 0.12);
+  vertical-align: top;
+}
+
+.day-schedule th {
+  color: #17284a;
+  font-weight: 800;
+  border-bottom: 2px solid #c58b2b;
+}
+
+.day-schedule tr:last-child td {
+  border-bottom: none;
+}
+
+.day-schedule td:first-child {
+  font-weight: 700;
+  color: #5d765d;
+  white-space: nowrap;
+}
+
 .check-card h3 {
   margin-top: 0;
 }
