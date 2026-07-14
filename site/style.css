@@ -672,6 +672,28 @@ p {
   margin: 8px 0 0;
 }
 
+.safety-alert-dropdown summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.safety-alert-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.safety-alert-dropdown summary::after {
+  content: "▾";
+  margin-left: auto;
+}
+
+.safety-alert-dropdown[open] summary::after {
+  content: "▴";
+}
+
+.safety-alert-dropdown + .safety-alert-dropdown {
+  margin-top: 16px;
+}
+
 .safety-alert ul {
   margin: 8px 0 0;
   padding-left: 22px;
