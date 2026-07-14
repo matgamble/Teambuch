@@ -881,6 +881,39 @@ p {
   margin-top: 16px;
 }
 
+.rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.rule-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rule-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.rule-item p {
+  margin: 0;
+}
+
 .day-schedule-wrap {
   overflow-x: auto;
   margin: 14px 0;
