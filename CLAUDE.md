@@ -19,6 +19,10 @@ Dieses Repository ist das digitale Teambuch der Kita Reischlestraße (Augsburg).
 - CSS-Grid: Karten (`.card`, `.check-card`, `.moment-card`) brauchen `min-width: 0`, sonst sprengen breite Foto-Galerien darin die Grid-Spaltenbreite.
 - Reihenfolge der Bilder innerhalb einer Galerie immer: 1. Teambild/Gruppenfoto, 2. Einzelbilder der Personen, 3. Raumbilder.
 
+## Ton bei Inhalten aus Sprachnotizen/Diktat
+- Wenn die Nutzerin Inhalte diktiert oder als Sprachnotiz/frei erzählten Text gibt (z. B. Aufgabenbeschreibungen für Bereiche wie Lernwerkstätten), diese nie roh/wörtlich übernehmen.
+- Stattdessen in einen wertschätzenden, warmen Ton umformulieren und inhaltlich leicht ausschmücken – ohne den Inhalt zu verändern oder zu erfinden. Ziel: Mitarbeitenden soll beim Lesen klar werden, worum es geht und warum es wichtig ist.
+
 ## Git-Workflow
 - Entwickelt wird ausschließlich auf dem Branch `claude/teambuch-visibility-6bk15p`.
 - Niemals direkt auf `main` pushen.
