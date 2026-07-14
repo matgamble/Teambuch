@@ -638,6 +638,49 @@ p {
   margin-top: 22px;
 }
 
+.safety-alert {
+  background: #fdecea;
+  border-left: 6px solid #c0392b;
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.safety-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  color: #c0392b;
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+.safety-alert-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(192, 57, 43, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+.safety-alert p {
+  margin: 8px 0 0;
+}
+
+.safety-alert ul {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.safety-alert li {
+  margin: 4px 0;
+}
+
 .card-grid,
 .checklist-grid,
 .agreement-grid,
