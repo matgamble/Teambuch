@@ -26,7 +26,7 @@ Dieses Repository ist das digitale Teambuch der Kita Reischlestraße (Augsburg).
 ## Git-Workflow
 - Entwickelt wird ausschließlich auf dem Branch `claude/teambuch-visibility-6bk15p`.
 - Niemals direkt auf `main` pushen.
-- Nach jeder abgeschlossenen Änderung explizit fragen: „Soll ich das nach main mergen?" und erst nach einem „ja" mergen (fast-forward).
+- Nach jeder abgeschlossenen Änderung an `site/` immer zuerst einen Playwright-Screenshot des geänderten Abschnitts zeigen, dann explizit fragen: „Soll ich das nach main mergen?" und erst nach einem „ja" mergen (fast-forward).
 - Vor riskanten/destruktiven Aktionen (z. B. große Aufräumarbeiten, Löschungen) immer warnen, wenn Folgen nicht einfach rückgängig zu machen sind, und wenn sinnvoll vorher einen Backup-Branch anlegen.
 
 ## Externe Quellen & Daten
