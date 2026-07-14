@@ -917,6 +917,12 @@ p {
   border-bottom: 4px solid rgba(93, 118, 93, 0.45);
 }
 
+.agreement-grid div a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .partner-logos {
   display: flex;
   flex-wrap: wrap;
