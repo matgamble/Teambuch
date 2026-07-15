@@ -713,6 +713,10 @@ p {
   margin-top: 24px;
 }
 
+#stammgruppen .card-grid {
+  grid-template-columns: 1fr;
+}
+
 .card,
 .check-card,
 .moment-card {
