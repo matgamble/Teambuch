@@ -71,6 +71,13 @@ Ab sofort werden wiederkehrende oder ungelöste technische Fehler hier kurz prot
 - Deutet eher auf ein temporäres/flackerndes Anzeigeproblem hin als auf ein echtes Größen- oder Inhaltsproblem (auch wenn eine inhaltliche Ablehnung durch einen Sicherheitsfilter bei einzelnen Fällen nicht auszuschließen ist, siehe Eintrag oben).
 - Workaround, der wiederholt geholfen hat: Bei „rejected by API" die Datei unter neuem Namen erneut speichern bzw. leicht verändern (Format wechseln, z. B. PNG → JPEG, oder Auflösung um ca. 40 % verkleinern) und erneut per Read-Tool versuchen. Meist reicht ein zweiter oder dritter Versuch.
 
+## Desktop-Hintergrund (Wallpaper)
+- Liegt in `extras/wallpaper-orka-zirbelnuss/` (kein Website-Content, nur zum Download für die Nutzerin persönlich).
+- Motiv: Orka + Zirbelnuss, ausgeschnitten aus der Illustration von `site/teambuch-cover.png` (Hintergrund per Farbschwellenwert freigestellt), mit gebogenem „Kita Reischlestraße"-Schriftzug darüber und der Icon-Motto-Zeile „Gemeinsam. Für Kinder. Mit Herz und Ideen." mittig unten.
+- Abgestimmter Endstand: einfarbig grauer Hintergrund (`#A3A39B`), kein „Teambuch"-Schriftzug, Illustration + Bogentext unten rechts positioniert (viel Platz links/oben für Desktop-Icons), Illustration bewusst klein gehalten.
+- Reproduzierbar/anpassbar über `extras/wallpaper-orka-zirbelnuss/build.py` (reines PIL-Skript, braucht die im selben Ordner liegenden `crop_illustration.png`, `arctext.png`, `motto.png`). Erzeugt aktuell die Formate 1920×1200 und 3840×2160.
+- Falls die Nutzerin ein neues Format oder Farbe möchte: einfach `build.py` mit neuen Parametern (Skalierung, Position, Hintergrundfarbe) erneut aufrufen statt alles neu zu bauen.
+
 ## Architektur-Hinweis
 - `site/index.html` ist die zentrale, statische Seite (Stammgruppen, Lernwerkstätten, Hauswirtschaft, Fortbildungen, Bilder & Momente, Checklisten, ...), gestylt über `site/style.css` und `site/checklists.css`.
 - Wo möglich, Inhalte lieber direkt statisch in `index.html` schreiben statt JS-Injection zur Laufzeit hinzuzufügen – hat in der Vergangenheit zu Duplikat-Bugs geführt (z. B. doppelte Karten/Fotos, wenn Inhalt sowohl statisch als auch per JS eingefügt wurde). `site/hort-gallery-shell.js` (Hort-Fotogalerie per Laufzeit-Injection ins iframe) wurde deshalb entfernt und die Hort-Galerie direkt statisch in `site/index.html` eingebaut (Juli 2026) – dadurch bekommt sie wie alle anderen Galerien automatisch die swipebare Vollbildansicht von `slideshow.js`. Aus demselben Grund wurden auch die vormals per `checklists.js` zur Laufzeit erzeugten Abschnitte „Aktuelles" und „Personalratswahl 2026" statisch in `site/index.html` geschrieben.
