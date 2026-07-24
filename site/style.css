@@ -750,11 +750,6 @@ p {
   text-align: center;
 }
 
-.special-moments {
-  background:
-    linear-gradient(135deg, rgba(248, 241, 223, 0.98), rgba(231, 234, 223, 0.9));
-}
-
 .moment-album {
   margin-top: 16px;
   padding: 14px;
