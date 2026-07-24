@@ -62,9 +62,6 @@ Etablierter Ablauf für hochgeladene .pptx-Dateien:
 - Repository am Ende der Session aufgeräumt (Roh-Uploads und ungenutzte Bilder aus dem Hauptverzeichnis entfernt); `main` und der Feature-Branch waren zum Zeitpunkt dieses Eintrags exakt synchron.
 - Offen/unerledigt: Ein von der Nutzerin hochgeladenes Foto (sollte „ordentlicher und kreativer" umgesetzt werden) konnte in dieser Session nicht angezeigt werden – wiederholte Anzeigeversuche (Originalgröße, verkleinert, zugeschnitten, ohne EXIF) wurden alle von der Vision-API abgelehnt, während andere Testbilder problemlos funktionierten. Das deutet eher auf eine inhaltliche Ablehnung durch einen Sicherheitsfilter hin als auf ein Größen-/Technikproblem. Falls die Nutzerin darauf zurückkommt: neu hochladen lassen und ggf. nach dem genauen Bildinhalt fragen, falls es erneut nicht angezeigt werden kann.
 
-**24. Juli 2026:**
-- Offen/unerledigt (Erinnerung für spätere Sessions): Die Karte „Umwandlungstage 2027" unter Aktuelles (`#umwandlungstage-2027`) soll nach der Frist zur Geltendmachung (08. November 2026, siehe Info-Dokument in der Galerie) aus Aktuelles entfernt und ins Archiv verschoben werden – analog zum Sommerfest. Datum vormerken und die Nutzerin nach dem 08.11.2026 von selbst darauf ansprechen bzw. beim nächsten passenden Anlass umsetzen.
-
 ### Fehlerprotokoll
 
 Ab sofort werden wiederkehrende oder ungelöste technische Fehler hier kurz protokolliert (Datum, Kurzbeschreibung, was schon versucht wurde), damit eine neue Session nicht bei null anfangen muss. Bei neuen relevanten Fehlern bitte kurz ergänzen.
