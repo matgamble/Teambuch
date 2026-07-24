@@ -1173,18 +1173,6 @@ p {
   margin: 0 auto;
 }
 
-.top-logo-bar {
-  display: flex;
-  justify-content: center;
-  padding: 14px 10px 2px;
-}
-
-.top-logo-bar img {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .orka-dropdown {
   width: calc(100% - 20px);
