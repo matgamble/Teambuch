@@ -18,6 +18,7 @@ Dieses Repository ist das digitale Teambuch der Kita Reischlestraße (Augsburg).
 - Skriptreihenfolge am Ende von `site/index.html` beachten: `checklists.js` muss vor `slideshow.js` geladen werden, damit dynamisch erzeugte Galerien schon im DOM stehen, wenn slideshow.js scannt.
 - CSS-Grid: Karten (`.card`, `.check-card`, `.moment-card`) brauchen `min-width: 0`, sonst sprengen breite Foto-Galerien darin die Grid-Spaltenbreite.
 - Reihenfolge der Bilder innerhalb einer Galerie immer: 1. Teambild/Gruppenfoto, 2. Einzelbilder der Personen, 3. Raumbilder.
+- Ausnahme „Die Verrückten" (Bilder & Momente): dort immer nach Upload-Datum sortiert, neuestes Bild ganz vorne. Neue Fotos werden am Anfang der Galerie eingefügt, nicht am Ende.
 
 ## Ton bei Inhalten aus Sprachnotizen/Diktat
 - Wenn die Nutzerin Inhalte diktiert oder als Sprachnotiz/frei erzählten Text gibt (z. B. Aufgabenbeschreibungen für Bereiche wie Lernwerkstätten), diese nie roh/wörtlich übernehmen.
