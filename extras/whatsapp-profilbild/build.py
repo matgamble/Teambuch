@@ -5,9 +5,13 @@ im Teambuch als Footer-Motiv) auf warmem Verlaufshintergrund, mit
 gebogenem Schriftzug "Die Verrueckten" (Georgia italic, wie das
 "Teambuch"-Wortlogo) und duennem Gold-Ring als Rahmen.
 
+Unten zusaetzlich der Schriftzug "Kita Reischlestraße" (ohne Stadt-
+Augsburg-Logo, nur der Ortsbezug als Schriftzug, im gleichen Stil).
+
 Voraussetzungen (liegen im selben Ordner):
-  - arctext-die-verrueckten.png  (gebogener Schriftzug, transparent,
-    gerendert aus arctext-die-verrueckten.html per Playwright)
+  - arctext-die-verrueckten.png       (oberer Bogen, transparent)
+  - arctext-kita-reischlestrasse.png  (unterer Bogen, transparent)
+  beide gerendert aus den gleichnamigen .html-Dateien per Playwright
 
 Aufruf: python3 build.py  -> erzeugt profilbild-die-verrueckten.png
 (1024x1024, WhatsApp schneidet das Bild beim Upload automatisch rund zu).
@@ -40,13 +44,13 @@ alpha = orka.split()[-1]
 orka_layer = Image.new("RGBA", orka.size, BLACK + (0,))
 orka_layer.putalpha(alpha)
 
-target_w = int(SIZE * 0.58)
+target_w = int(SIZE * 0.50)
 scale = target_w / orka_layer.width
 target_h = int(orka_layer.height * scale)
 orka_big = orka_layer.resize((target_w, target_h), Image.LANCZOS)
 
 paste_x = (SIZE - target_w) // 2 + int(SIZE * 0.02)
-paste_y = int(SIZE * 0.60) - target_h // 2
+paste_y = int(SIZE * 0.52) - target_h // 2
 
 # soft drop shadow
 shadow = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
@@ -66,6 +70,16 @@ arctext_big = arctext.resize((at_w, at_h), Image.LANCZOS)
 at_x = (SIZE - at_w) // 2
 at_y = int(SIZE * 0.10)
 canvas.alpha_composite(arctext_big, (at_x, at_y))
+
+# arc lettering "Kita Reischlestraße", curved below the whale (ohne Stadt-Logo)
+arctext2 = Image.open(BASE / "arctext-kita-reischlestrasse.png").convert("RGBA")
+at2_w = int(SIZE * 0.66)
+at2_scale = at2_w / arctext2.width
+at2_h = int(arctext2.height * at2_scale)
+arctext2_big = arctext2.resize((at2_w, at2_h), Image.LANCZOS)
+at2_x = (SIZE - at2_w) // 2
+at2_y = int(SIZE * 0.775)
+canvas.alpha_composite(arctext2_big, (at2_x, at2_y))
 
 # thin gold ring accent, inset from the edge
 ring = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
