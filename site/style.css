@@ -1208,10 +1208,14 @@ p {
   display: none;
 }
 
+.orka-dropdown summary::marker {
+  content: "";
+}
+
 .orka-dropdown summary:hover,
 .orka-dropdown summary:focus-visible {
-  background: rgba(231, 234, 223, 0.65);
-  transform: scale(1.04);
+  background: transparent;
+  transform: scale(1.06);
 }
 
 .orka-dropdown-icon {
