@@ -1123,3 +1123,52 @@ p {
     flex-basis: 360px;
   }
 }
+
+.site-footer {
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 40px auto 30px;
+  padding: 22px 18px 26px;
+  background:
+    radial-gradient(circle at top left, rgba(216, 228, 209, 0.65), transparent 65%),
+    radial-gradient(circle at bottom right, rgba(233, 214, 181, 0.6), transparent 65%),
+    rgba(255, 250, 240, 0.97);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.site-footer-label {
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #c58b2b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.85rem;
+}
+
+.site-footer-label::before,
+.site-footer-label::after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background: linear-gradient(90deg, transparent, rgba(197, 139, 43, 0.55));
+}
+
+.site-footer-label::after {
+  background: linear-gradient(90deg, rgba(197, 139, 43, 0.55), transparent);
+}
+
+.site-footer-logo {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
