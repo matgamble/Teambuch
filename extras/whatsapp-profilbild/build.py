@@ -1,9 +1,11 @@
 """
 WhatsApp-Profilbild fuer die Gruppe "Die Verrueckten" im Teambuch-Design:
-Orka-Silhouette (aus site/orka-symbol.png, Original-Schwarz wie ueberall
-im Teambuch als Footer-Motiv) auf warmem Verlaufshintergrund, mit
-gebogenem Schriftzug "Die Verrueckten" (Georgia italic, wie das
-"Teambuch"-Wortlogo) und duennem Gold-Ring als Rahmen.
+Orka-Symbol (aus site/orka-symbol.png, Original schwarz-weiss mit Augen-
+und Bauchflecken wie ueberall im Teambuch als Footer-Motiv -- NICHT als
+flache Silhouette einfaerben, sonst wirkt es wie ein reiner Schatten) auf
+warmem Verlaufshintergrund, mit gebogenem Schriftzug "Die Verrueckten"
+(Georgia italic, wie das "Teambuch"-Wortlogo) und duennem Gold-Ring als
+Rahmen.
 
 Unten zusaetzlich der Schriftzug "Kita Reischlestraße" (ohne Stadt-
 Augsburg-Logo, nur der Ortsbezug als Schriftzug, im gleichen Stil).
@@ -38,11 +40,11 @@ warm = np.array((238, 224, 195), dtype=np.float32)
 grad = cream[None, None, :] * (1 - t[:, :, None] * 0.75) + warm[None, None, :] * (t[:, :, None] * 0.75)
 canvas = Image.fromarray(np.clip(grad, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
 
-# orka silhouette, Original-Schwarz wie im Teambuch (site/orka-symbol.png)
-orka = Image.open(BASE.parent.parent / "site" / "orka-symbol.png").convert("RGBA")
-alpha = orka.split()[-1]
-orka_layer = Image.new("RGBA", orka.size, BLACK + (0,))
-orka_layer.putalpha(alpha)
+# orka-symbol.png ist bereits schwarz-weiss (Augen-/Bauchflecken als
+# opakes Weiss) mit transparentem Hintergrund -- unveraendert uebernehmen,
+# NICHT auf eine flache Farbe reduzieren (sonst verschwinden die Flecken
+# und es wirkt nur wie ein Schatten).
+orka_layer = Image.open(BASE.parent.parent / "site" / "orka-symbol.png").convert("RGBA")
 
 target_w = int(SIZE * 0.50)
 scale = target_w / orka_layer.width
