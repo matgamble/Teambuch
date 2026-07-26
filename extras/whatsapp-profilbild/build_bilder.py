@@ -52,12 +52,12 @@ canvas.alpha_composite(orka_big, (paste_x, paste_y))
 
 # arc lettering "Bilder", curved above the whale
 arctext = Image.open(BASE / "arctext-bilder.png").convert("RGBA")
-at_w = int(SIZE * 0.62)
+at_w = int(SIZE * 0.80)
 at_scale = at_w / arctext.width
 at_h = int(arctext.height * at_scale)
 arctext_big = arctext.resize((at_w, at_h), Image.LANCZOS)
 at_x = (SIZE - at_w) // 2
-at_y = int(SIZE * 0.15)
+at_y = int(SIZE * 0.12)
 canvas.alpha_composite(arctext_big, (at_x, at_y))
 
 # arc lettering "Kita Reischlestraße", curved below the whale (ohne Stadt-Logo)
