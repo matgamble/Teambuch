@@ -1185,3 +1185,65 @@ p {
   height: auto;
   display: block;
 }
+
+.orka-dropdown {
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 4px auto 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.orka-dropdown summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 18px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.orka-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.orka-dropdown summary:hover,
+.orka-dropdown summary:focus-visible {
+  background: rgba(231, 234, 223, 0.65);
+  transform: scale(1.04);
+}
+
+.orka-dropdown-icon {
+  width: 84px;
+  height: auto;
+  display: block;
+}
+
+.orka-dropdown-content {
+  background: rgba(255, 250, 240, 0.97);
+  border-radius: 22px;
+  padding: 22px 20px 26px;
+  margin-top: 6px;
+  border: 1px solid rgba(197, 139, 43, 0.18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.orka-dropdown-content > p:first-of-type {
+  margin-top: 0;
+}
+
+.orka-dropdown-content h2 {
+  margin-top: 0;
+  color: #12264a;
+  font-family: Georgia, serif;
+}
+
+.orka-dropdown-content h3.orka-section-title {
+  margin: 28px 0 0;
+  color: #c58b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
