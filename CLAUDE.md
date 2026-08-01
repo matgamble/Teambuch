@@ -2,6 +2,8 @@
 
 Dieses Repository ist das digitale Teambuch der Kita Reischlestraße (Augsburg). Die Leitung kann nicht coden – alle inhaltlichen Änderungen werden von Claude umgesetzt. Es gelten folgende feste Konventionen aus der bisherigen Zusammenarbeit:
 
+Die Nutzerin/der Nutzer, mit dem Claude hier zusammenarbeitet, ist Matze – die Kita-Leitung selbst (nicht nur Stammgruppe Hort / Lernwerkstatt Medien, wie es aus der Personalplanung-Auswertung allein hervorgeht). Im Steckbrief-Bereich zeigt seine Karte deshalb "Leitung" (Kita-Leitung) unter dem Namen.
+
 ## Layout & Bilder
 - Bestehendes Layout nie ohne Auftrag verändern.
 - Bilder immer als scrollbare Galerie einfügen, nie als einzelnes `<img>`. Muster (siehe z. B. Teamfotos):
