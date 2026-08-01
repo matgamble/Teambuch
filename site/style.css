@@ -728,6 +728,126 @@ p {
   min-width: 0;
 }
 
+.steckbrief-card {
+  background: rgba(248, 241, 223, 0.95);
+  border-radius: 22px;
+  padding: 14px;
+  border: 1px solid rgba(197, 139, 43, 0.18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+  min-width: 0;
+}
+
+.steckbrief-frame {
+  border: 2px solid #12264a;
+  box-shadow: inset 0 0 0 4px #f8f1df, inset 0 0 0 6px rgba(18, 38, 74, 0.55);
+  border-radius: 14px;
+  padding: 22px 16px 16px;
+  text-align: center;
+}
+
+.steckbrief-name {
+  font-family: Georgia, serif;
+  color: #12264a;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.steckbrief-photo-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 0 14px;
+}
+
+.steckbrief-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.steckbrief-photo-frame.photo-placeholder {
+  height: auto;
+  font-size: 0.85rem;
+}
+
+.steckbrief-leitung {
+  color: #c58b2b;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin: 0 0 4px;
+}
+
+.steckbrief-stammgruppe {
+  color: #12264a;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.steckbrief-lernwerkstatt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #5d765d;
+  color: #fff;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.steckbrief-lernwerkstatt .steckbrief-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+  opacity: 0.85;
+}
+
+.steckbrief-note {
+  color: #6b6152;
+  font-size: 0.85rem;
+  margin: 0 0 14px;
+}
+
+.steckbrief-divider {
+  border: none;
+  border-top: 1px solid rgba(18, 38, 74, 0.15);
+  margin: 4px 0 12px;
+}
+
+.steckbrief-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.steckbrief-footer img.steckbrief-orka {
+  width: 26px;
+  height: auto;
+  display: block;
+}
+
+.steckbrief-footer img.steckbrief-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.steckbrief-footer p {
+  margin: 0;
+  font-size: 0.66rem;
+  font-style: italic;
+  color: #6b6152;
+}
+
 .photo-placeholder {
   height: 180px;
   border-radius: 18px;
