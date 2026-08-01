@@ -826,26 +826,21 @@ p {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .steckbrief-footer img.steckbrief-orka {
-  width: 26px;
+  width: 16px;
   height: auto;
   display: block;
+  flex: none;
 }
 
 .steckbrief-footer img.steckbrief-logo {
-  height: 26px;
+  height: 18px;
   width: auto;
   display: block;
-}
-
-.steckbrief-footer p {
-  margin: 0;
-  font-size: 0.66rem;
-  font-style: italic;
-  color: #6b6152;
+  flex: none;
 }
 
 #team-steckbriefe .special-photo-gallery {
@@ -866,7 +861,7 @@ p {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
 }
 
-#team-steckbriefe .special-photo-gallery img {
+#team-steckbriefe .special-photo-gallery .steckbrief-photo-frame img {
   width: 100%;
   height: 100%;
   max-height: none;
