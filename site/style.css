@@ -297,9 +297,18 @@ span.contact-item {
   margin: 6px 0;
 }
 
+.contact-qr-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
 .contact-qr {
-  margin: 16px auto 0;
-  max-width: 220px;
+  margin: 0;
+  flex: 1 1 220px;
+  max-width: 240px;
   text-align: center;
   background: #f3efe6;
   border-radius: 18px;
