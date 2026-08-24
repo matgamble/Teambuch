@@ -23,9 +23,10 @@ Die Nutzerin/der Nutzer, mit dem Claude hier zusammenarbeitet, ist Matze – die
 - Ausnahme „Die Verrückten" (Bilder & Momente): dort immer nach Upload-Datum sortiert, neuestes Bild ganz vorne. Neue Fotos werden am Anfang der Galerie eingefügt, nicht am Ende.
 
 ## Trägerin-Logo auf Druckmaterialien
-- Kombiniertes Logo (Stadt-Augsburg-Logo unverändert + Orka + „Kita Reischlestraße") liegt unter `site/assets/branding/logo-stadt-augsburg-kita-reischlestrasse.png`.
+- Logo (Orka + „Kita Reischlestraße") liegt unter `site/assets/branding/logo-kita-reischlestrasse.png`.
 - Seit 24. Juli 2026 gilt: Dieses Logo gehört auf **alles, was die Kita nach außen verlässt bzw. ausgedruckt werden kann** – Türschilder, Infoblätter, Flyer, Aushänge etc. (siehe z. B. `site/assets/buero/tuerschilder/`, dort im Footer unterhalb der Trennlinie anstelle des reinen Orka-Icons eingesetzt).
 - Bei neuen Druck-/Aushang-Inhalten das Logo standardmäßig mit einbauen, ohne dass es jedes Mal extra angefragt werden muss.
+- **25. August 2026:** Auf Wunsch der Nutzerin wurde der Stadt-Augsburg-Logo-Teil entfernt, das Logo zeigt jetzt nur noch Orka + „Kita Reischlestraße" (alte Datei `logo-stadt-augsburg-kita-reischlestrasse.png` gelöscht). Die bereits als PNG exportierten Türschilder unter `site/assets/buero/tuerschilder/` zeigen noch die alte Logo-Version und wurden nicht automatisch neu gerendert – bei Bedarf ansprechen.
 
 ## Ton bei Inhalten aus Sprachnotizen/Diktat
 - Wenn die Nutzerin Inhalte diktiert oder als Sprachnotiz/frei erzählten Text gibt (z. B. Aufgabenbeschreibungen für Bereiche wie Lernwerkstätten), diese nie roh/wörtlich übernehmen.
