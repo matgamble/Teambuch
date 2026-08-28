@@ -896,7 +896,7 @@ p {
 }
 
 .steckbrief-footer img.steckbrief-logo {
-  height: 18px;
+  height: 30px;
   width: auto;
   display: block;
   flex: none;
@@ -1375,7 +1375,7 @@ p {
 }
 
 .site-footer-logo {
-  max-width: 320px;
+  max-width: 480px;
   width: 100%;
   height: auto;
   display: block;
