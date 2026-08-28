@@ -848,6 +848,38 @@ p {
   margin: 4px 0 12px;
 }
 
+.steckbrief-arbeitszeiten-label {
+  color: #12264a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0 0 6px;
+}
+
+.steckbrief-arbeitszeiten-label span {
+  font-weight: 400;
+  color: #6b6152;
+}
+
+.steckbrief-arbeitszeiten {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 10px;
+  font-size: 0.82rem;
+  color: #3d3628;
+}
+
+.steckbrief-arbeitszeiten li {
+  display: contents;
+}
+
+.steckbrief-arbeitszeiten strong {
+  color: #5d765d;
+  font-weight: 700;
+}
+
 .steckbrief-footer {
   display: flex;
   align-items: center;
