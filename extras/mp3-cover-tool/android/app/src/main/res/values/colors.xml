@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette wie im Web-Tool: Graphit-Hintergrund, Messing-Akzent -->
+    <color name="colorPrimary">#26221D</color>
+    <color name="colorPrimaryDark">#1B1815</color>
+    <color name="colorAccent">#C9A15A</color>
+</resources>

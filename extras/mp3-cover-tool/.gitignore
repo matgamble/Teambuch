@@ -1,0 +1,4 @@
+node_modules/
+tools/smoke-ergebnis/
+*.apk
+*.aab
