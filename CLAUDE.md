@@ -100,9 +100,7 @@ Etablierter Ablauf für hochgeladene .pptx-Dateien:
 - CLAUDE.md um einen festen Hinweis ergänzt: Die Nutzerin/der Nutzer dieser Zusammenarbeit ist Matze, die Kita-Leitung selbst (siehe ganz oben).
 
 **3. September 2026:**
-- Neuer Ordner `extras/mp3-cover-tool/`: das (nicht zum Teambuch gehörende) MP3-Cover-Tool für den MECHEN-Player als fertig eingerichtetes Capacitor-Projekt, damit daraus eine Android-APK gebaut werden kann. Die APK selbst ließ sich hier nicht bauen — `dl.google.com` ist per Netzwerk-Policy gesperrt (403), und sowohl Android SDK als auch das Android-Gradle-Plugin kommen nur von dort. Der Build muss auf einem Rechner mit Android Studio laufen (Anleitung in `extras/mp3-cover-tool/README.md`).
-- Dabei einen echten Fehler im Tool gefunden und behoben: `batchToolEl` wurde vor seiner `let`-Deklaration benutzt, wodurch beim Rendern jeder Album-Karte eine `ReferenceError` flog und Titelliste/Cover-Bereich komplett fehlten. Außerdem JSZip lokal eingebunden statt vom CDN (App funktioniert damit offline), Export in der nativen App direkt in den Dokumente-Ordner statt als ZIP, Service Worker nur noch im Browser aktiv, App-Icons/Splash/Theme aus dem vorhandenen Tool-Icon erzeugt.
-- Erster echter Browser-Test des Tools überhaupt: `extras/mp3-cover-tool/tools/smoke-test.mjs` (Playwright) läuft grün. Cover-Suche bleibt ungetestet, weil `itunes.apple.com` hier ebenfalls gesperrt ist.
+- Das MP3-Cover-Tool für den MECHEN-Player (Capacitor-Projekt für eine Android-APK) lag kurzzeitig unter `extras/mp3-cover-tool/`, gehört aber nicht ins Teambuch und liegt jetzt in einem eigenen Repository: **matgamble/Audio-File-Converter**. Dort steht auch die Bauanleitung. Merke fürs nächste Mal: eigenständige Werkzeuge, die nichts mit der Kita-Website zu tun haben, bekommen ein eigenes Repo statt eines Unterordners in `extras/`.
 
 ### Fehlerprotokoll
 
