@@ -1448,3 +1448,32 @@ p {
   font-size: 0.82rem;
   font-weight: 800;
 }
+
+.memorial-card {
+  background: rgba(232, 236, 244, 0.75);
+  border-color: rgba(18, 38, 74, 0.25);
+}
+
+.memorial-card h3 {
+  color: #12264a;
+}
+
+.memorial-page {
+  text-align: center;
+}
+
+.memorial-page h2 {
+  color: #12264a;
+}
+
+.memorial-page .special-photo-gallery {
+  justify-content: center;
+}
+
+.memorial-page .special-photo-gallery figure {
+  width: min(320px, 70vw);
+}
+
+.memorial-page p {
+  text-align: left;
+}
