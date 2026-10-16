@@ -43,15 +43,15 @@ r=p.add_run('Augsburg, im Oktober 2026'); r.font.size=Pt(10)
 bottom_line(d.add_paragraph())
 
 p=d.add_paragraph(); p.paragraph_format.space_before=Pt(14); p.paragraph_format.space_after=Pt(2)
-r=p.add_run('Der neue Elternbeirat ist gewählt – herzlichen Glückwunsch!'); r.bold=True; r.font.size=Pt(19)
+r=p.add_run('Herzlichen Glückwunsch zur Wahl in den Elternbeirat!'); r.bold=True; r.font.size=Pt(19)
 p=d.add_paragraph(); r=p.add_run('Elternbeirat der Kita Reischlestraße · Kita-Jahr 2026/27'); r.italic=True; r.font.color.rgb=GOLD
 p.paragraph_format.space_after=Pt(12)
 
-d.add_paragraph('Liebe Eltern und Erziehungsberechtigte,')
-d.add_paragraph('die Wahl des Elternbeirats für das Kita-Jahr 2026/27 hat stattgefunden. Wir danken allen, die sich beteiligt haben – und ganz besonders denjenigen, die bereit waren zu kandidieren.')
-p=d.add_paragraph(); p.add_run('Herzlichen Glückwunsch an den neu gewählten Elternbeirat!').bold=True
-p.add_run(' Wir freuen uns sehr, dass Sie diese Aufgabe übernehmen, und auf eine vertrauensvolle, offene Zusammenarbeit. Der Elternbeirat ist die Stimme der Eltern in unserer Kita, ein wichtiges Bindeglied zwischen Familien, Team und Leitung und damit eine große Bereicherung für unser Haus.')
-d.add_paragraph('Alle anderen Familien laden wir herzlich ein, Anregungen, Fragen und Ideen künftig auch an den Elternbeirat heranzutragen. Gemeinsam gestalten wir das Kita-Jahr für unsere Kinder.')
+d.add_paragraph('Liebe Judith, Elham, Julian, Maria, Nicole und Veronika,')
+d.add_paragraph('Sie wurden für das Kita-Jahr 2026/27 in den Elternbeirat der Kita Reischlestraße gewählt – dazu gratulieren wir Ihnen ganz herzlich!')
+p=d.add_paragraph(); p.add_run('Wir freuen uns sehr, dass Sie diese Aufgabe übernehmen,')
+p.add_run(' und auf eine vertrauensvolle, offene Zusammenarbeit. Der Elternbeirat ist die Stimme der Eltern in unserer Kita, ein wichtiges Bindeglied zwischen Familien, Team und Leitung und damit eine große Bereicherung für unser Haus.')
+d.add_paragraph('Vielen Dank für Ihre Zeit und Ihr Engagement. Gemeinsam gestalten wir das Kita-Jahr für unsere Kinder.')
 
 sp=d.add_paragraph(); sp.paragraph_format.space_after=Pt(2)
 t=d.add_table(rows=1,cols=2); t.autofit=False; t.alignment=1
@@ -63,7 +63,7 @@ a.paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 a.paragraphs[0].add_run().add_picture('qr-whatsapp-elternbeirat.png',width=Mm(42))
 for c in (a,b):
     tcPr=c._tc.get_or_add_tcPr(); v=OxmlElement('w:vAlign'); v.set(qn('w:val'),'center'); tcPr.append(v)
-p=b.paragraphs[0]; r=p.add_run('Nur für Mitglieder des Elternbeirats: unsere WhatsApp-Gruppe'); r.bold=True; r.font.size=Pt(12)
+p=b.paragraphs[0]; r=p.add_run('Unsere WhatsApp-Gruppe für den Elternbeirat'); r.bold=True; r.font.size=Pt(12)
 p=b.add_paragraph(); r=p.add_run('Zur einfachen Abstimmung von Terminen und für den kurzen Draht untereinander gibt es die Gruppe '); r.font.size=Pt(10)
 r=p.add_run('„Elternbeirat KiTa Reischle 26/27“'); r.bold=True; r.font.size=Pt(10); p.add_run('.').font.size=Pt(10)
 p=b.add_paragraph(); r=p.add_run('So treten Sie bei: WhatsApp öffnen, mit der Kamera den QR-Code scannen und dem Beitritt zustimmen. Bitte geben Sie den Code nicht weiter, damit die Gruppe im Kreis des Elternbeirats bleibt.'); r.font.size=Pt(10)
