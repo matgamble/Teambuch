@@ -49,10 +49,10 @@ p=d.add_paragraph(); r=p.add_run('Elternbeirat der Kita Reischlestraße · Kita-
 p.paragraph_format.space_after=Pt(12)
 
 d.add_paragraph(f'Liebe {sys.argv[1]},')
-d.add_paragraph('Sie wurden für das Kita-Jahr 2026/27 in den Elternbeirat der Kita Reischlestraße gewählt – dazu gratulieren wir Ihnen ganz herzlich!')
-p=d.add_paragraph(); p.add_run('Wir freuen uns sehr, dass Sie diese Aufgabe übernehmen,')
+d.add_paragraph('Du wurdest für das Kita-Jahr 2026/27 in den Elternbeirat der Kita Reischlestraße gewählt – dazu gratulieren wir dir ganz herzlich!')
+p=d.add_paragraph(); p.add_run('Wir freuen uns sehr, dass du diese Aufgabe übernimmst,')
 p.add_run(' und auf eine vertrauensvolle, offene Zusammenarbeit. Der Elternbeirat ist die Stimme der Eltern in unserer Kita, ein wichtiges Bindeglied zwischen Familien, Team und Leitung und damit eine große Bereicherung für unser Haus.')
-d.add_paragraph('Vielen Dank für Ihre Zeit und Ihr Engagement. Gemeinsam gestalten wir das Kita-Jahr für unsere Kinder.')
+d.add_paragraph('Vielen Dank für deine Zeit und dein Engagement. Gemeinsam gestalten wir das Kita-Jahr für unsere Kinder.')
 
 sp=d.add_paragraph(); sp.paragraph_format.space_after=Pt(2)
 t=d.add_table(rows=1,cols=2); t.autofit=False; t.alignment=1
@@ -67,7 +67,7 @@ for c in (a,b):
 p=b.paragraphs[0]; r=p.add_run('Unsere WhatsApp-Gruppe für den Elternbeirat'); r.bold=True; r.font.size=Pt(12)
 p=b.add_paragraph(); r=p.add_run('Zur einfachen Abstimmung von Terminen und für den kurzen Draht untereinander gibt es die Gruppe '); r.font.size=Pt(10)
 r=p.add_run('„Elternbeirat KiTa Reischle 26/27“'); r.bold=True; r.font.size=Pt(10); p.add_run('.').font.size=Pt(10)
-p=b.add_paragraph(); r=p.add_run('So treten Sie bei: WhatsApp öffnen, mit der Kamera den QR-Code scannen und dem Beitritt zustimmen. Bitte geben Sie den Code nicht weiter, damit die Gruppe im Kreis des Elternbeirats bleibt.'); r.font.size=Pt(10)
+p=b.add_paragraph(); r=p.add_run('So trittst du bei: WhatsApp öffnen, mit der Kamera den QR-Code scannen und dem Beitritt zustimmen. Bitte gib den Code nicht weiter, damit die Gruppe im Kreis des Elternbeirats bleibt.'); r.font.size=Pt(10)
 
 p=d.add_paragraph(); p.paragraph_format.space_before=Pt(16)
 p.add_run('Mit herzlichen Grüßen')
