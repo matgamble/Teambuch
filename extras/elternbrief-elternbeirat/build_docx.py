@@ -1,3 +1,4 @@
+import sys
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -47,7 +48,7 @@ r=p.add_run('Herzlichen Glückwunsch zur Wahl in den Elternbeirat!'); r.bold=Tru
 p=d.add_paragraph(); r=p.add_run('Elternbeirat der Kita Reischlestraße · Kita-Jahr 2026/27'); r.italic=True; r.font.color.rgb=GOLD
 p.paragraph_format.space_after=Pt(12)
 
-d.add_paragraph('Liebe Judith, Elham, Julian, Maria, Nicole und Veronika,')
+d.add_paragraph(f'Liebe {sys.argv[1]},')
 d.add_paragraph('Sie wurden für das Kita-Jahr 2026/27 in den Elternbeirat der Kita Reischlestraße gewählt – dazu gratulieren wir Ihnen ganz herzlich!')
 p=d.add_paragraph(); p.add_run('Wir freuen uns sehr, dass Sie diese Aufgabe übernehmen,')
 p.add_run(' und auf eine vertrauensvolle, offene Zusammenarbeit. Der Elternbeirat ist die Stimme der Eltern in unserer Kita, ein wichtiges Bindeglied zwischen Familien, Team und Leitung und damit eine große Bereicherung für unser Haus.')
@@ -76,4 +77,4 @@ d.add_paragraph('Kita-Leitung')
 
 f=s.footer.paragraphs[0]; f.alignment=WD_ALIGN_PARAGRAPH.CENTER; top_line(f)
 r=f.add_run('Kita Reischlestraße · Gemeinsam. Für Kinder. Mit Herz und Ideen.'); r.font.size=Pt(8.5); r.font.color.rgb=RGBColor(0x5b,0x6b,0x85)
-d.save('elternbrief-elternbeirat-2026-27.docx')
+d.save(f'einzelbriefe/elternbeirat-brief-{sys.argv[1].lower()}.docx')
