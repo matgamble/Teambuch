@@ -1477,3 +1477,15 @@ p {
 .memorial-page p {
   text-align: left;
 }
+
+/* Dienstplan-Tabelle */
+.dienstplan-scroll { overflow-x: auto; margin: 16px 0 8px; border-radius: 12px; border: 1px solid rgba(18, 38, 74, 0.18); -webkit-overflow-scrolling: touch; }
+.dienstplan-table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 0.85rem; color: #3d3628; background: #fffdf7; }
+.dienstplan-table th, .dienstplan-table td { padding: 7px 8px; border-bottom: 1px solid rgba(18, 38, 74, 0.12); text-align: center; vertical-align: middle; }
+.dienstplan-table thead th { background: #12264a; color: #fff; font-weight: 700; position: sticky; top: 0; }
+.dienstplan-table tbody th[scope='row'] { text-align: left; color: #12264a; font-weight: 700; }
+.dienstplan-table .dienstplan-group th { background: #e3e9f1; color: #12264a; text-align: left; font-weight: 700; }
+.dienstplan-table .dienstplan-group th span { font-weight: 400; color: #6b6152; margin-left: 8px; font-size: 0.8rem; }
+.dp-zeit { display: block; white-space: nowrap; }
+.dp-std { display: block; font-size: 0.75rem; color: #6b6152; white-space: nowrap; }
+.dp-frei { color: #9a9284; }
